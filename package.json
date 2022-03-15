@@ -1,0 +1,21 @@
+{
+  "name": "hetarataapi",
+  "version": "1.0.0",
+  "description": "Backend API for Hetarata App",
+  "main": "Server.js",
+  "scripts": {
+    "start": "node Backend/Server.js",
+    "server": "nodemon Backend/Server.js"
+  },
+  "author": "Akila Ariyathilaka",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.6"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

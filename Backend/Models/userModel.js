@@ -36,6 +36,9 @@ const userSchema = mongoose.Schema({
     Branch: {
         type: String,
     },
+    askLoan: {
+        type: String,
+    },
 }, 
 {timestamps: true}
 )

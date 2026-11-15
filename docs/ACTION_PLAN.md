@@ -34,6 +34,13 @@
 - [x] Pass analysis and all Flutter tests; compile debug APK without the unsound flag.
 - [x] Update version numbers, documentation and CI build command.
 
+## RDB curation milestone status
+- [x] Register the user-supplied RDB official catalogue source with stable institution ID `rdb`.
+- [x] Verify insert-only source registration and preservation of curated metadata; 8 backend tests pass.
+- [x] Preserve the network additions and verification procedure in Git when the cloud draft is uneditable.
+- [ ] Enable `rdb.lk` and `www.rdb.lk` in environment settings (draft save rejected).
+- [ ] Review current product pages/branch directory, assign confirmed ownership and record verification evidence.
+
 ## Follow-up refactoring
 - Institution ownership data, staff authorization and enquiry delivery.
 - Verified catalogue curation, localization and smaller reusable Flutter widgets.

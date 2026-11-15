@@ -74,6 +74,16 @@ Returns `{schemaVersion: 1, products: [...], branches: [...], institutions: [...
 
 Returns `{"loans": [...]}` from MongoDB. Optional `?category=business|agriculture|coconut|other`; invalid categories return **400**. An empty database returns an empty list. Existing records without category remain in unfiltered results only. Inactive records are excluded. This compatibility endpoint retains the `{loans: [...]}` response; the app now uses `/api/catalogue`.
 
+## Initial institution source: RDB
+
+The first nominated provider is `rdb`, with the user-supplied official catalogue URL https://www.rdb.lk/loans-and-advance/ . Register source metadata explicitly with:
+
+```bash
+MONGO_URI=mongodb://127.0.0.1:27018/eoapp npm run seed:institutions
+```
+
+This insert-only command is repeatable and leaves verification pending; it does not assign the historical schemes/branches or send enquiries. Source access is currently blocked by the environment allowlist, and the draft network update was rejected as uneditable. See [curation procedure](docs/INSTITUTION_CURATION.md) and [required network additions](docs/NETWORK_REQUIREMENTS.md). Do not mark records verified from the URL alone.
+
 ## Structure and compatibility
 
 - `Backend/app.js`: Express setup, independently testable without listening at import.

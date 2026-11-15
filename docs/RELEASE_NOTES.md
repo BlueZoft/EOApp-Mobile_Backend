@@ -1,3 +1,14 @@
+# Initial RDB source registration — 2026-11-15
+
+- The user nominated Sri Lankan banks and supplied https://www.rdb.lk/loans-and-advance/ . Added stable institution ID `rdb` and an insert-only source-registration command.
+- Kept provider verification pending. Historical schemes and branches remain unassigned; no current rates, legal bank classification or availability are inferred from the supplied URL alone.
+- Added curation instructions and a repository copy of the required additional network hosts (`rdb.lk`, `www.rdb.lk`). The environment proxy blocked the source request; the network draft update failed as uneditable and was not applied/published.
+- **8 backend integration tests passed**. Running the source import twice and reading its metadata through the live development API also passed. Flutter remains at **10 passing tests**, clean analysis and a sound-null-safe debug APK.
+
+Official term/ownership verification remains blocked until the RDB source is accessible. Existing settings/presets must be preserved when adding the hosts. Staff access/delivery, device checks and current Play Store compatibility remain outstanding.
+
+---
+
 # Version 1.1.0 — sound null safety — 2026-11-15
 
 - Migrated the app and test suite to sound null safety. Catalogue IDs/display fields and screen arguments are required; only genuinely optional metadata, cache timestamps and pending state remain nullable.

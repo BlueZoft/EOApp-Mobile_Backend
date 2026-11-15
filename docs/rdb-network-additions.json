@@ -1,0 +1,4 @@
+{
+  "description": "Proposed additional hosts; merge into existing rules, not a replacement policy",
+  "add_allowed_domains": ["rdb.lk", "www.rdb.lk"]
+}

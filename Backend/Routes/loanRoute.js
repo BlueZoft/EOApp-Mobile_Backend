@@ -1,9 +1,3 @@
-const express = require('express')
-const router = express.Router()
-const{getLoans} = require('../Controllers/Controller')
-
-
-router.get('/', getLoans)
-
-
+const router = require('express').Router()
+router.get('/', require('../Controllers/loanController').getLoans)
 module.exports = router

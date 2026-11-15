@@ -1,0 +1,11 @@
+const express = require('express')
+const { errorHandler } = require('./Middleware/errorMiddleware')
+const app = express()
+app.disable('x-powered-by')
+app.use(express.json({ limit: '16kb' }))
+app.get('/api/catalogue', require('./Controllers/catalogueController').getCatalogue)
+app.use('/api/loans', require('./Routes/loanRoute'))
+app.use('/api/userdata', require('./Routes/userRoute'))
+app.use((req, res) => res.status(404).json({ message: 'Route not found' }))
+app.use(errorHandler)
+module.exports = app

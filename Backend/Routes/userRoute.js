@@ -1,11 +1,4 @@
-const express = require('express')
-const router = express.Router()
-const{setData, getData} = require('../Controllers/Controller')
-
-
-router.post('/', setData)
-router.get('/', getData)
-
-
-
+const router = require('express').Router()
+router.post('/', require('../Controllers/enquiryController').createEnquiry)
+// Personal enquiry records must not be exposed through a public GET endpoint.
 module.exports = router

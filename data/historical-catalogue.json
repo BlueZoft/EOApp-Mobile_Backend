@@ -1,0 +1,1859 @@
+{
+  "schemaVersion": 1,
+  "products": [
+    {
+      "lName": "සෞභාග්‍යා",
+      "sDes": "කුඩා හෝ මධ්‍ය පරිමාණ ව්‍යාපෘති, ව්‍යාපාර, නිෂ්පාදන කර්මාන්ත සඳහා",
+      "forWho": "නව ව්‍යාපාර හෝ ව්‍යාපෘති ඇරඹීමට අදහස් කරන්නන්,ව්‍යවසායකයින්",
+      "iRate": "6%",
+      "maxLimit": "රු. මිලියන 25",
+      "maxRepay": "අවුරුදු 5",
+      "eligibles": "අපනයන මල්, කෙසෙල්, හතු, කුරුඳු, පැෂන් පේර, කරවල නිෂ්පාදන, සත්ව පාලනය, ඇඟලුම් කර්මාන්තය, මදුරුදැල්, ලෙදර් බෑග්, ලෙදර් සපත්තු, අත්කම්, ගඩොල්, බ්ලොක්ගල්, සිමෙන්ති ආශ්‍රිත නිෂ්පාදන, වඩු කර්මාන්ත, රූපලාවන්‍ය කටයුතු, හඳුන්කූරු, කුළුබඩු, බේකරි කෑම හා රසකැවිලි, පපඩම්, කජු, යෝගට්, මීකිරි නිෂ්පාදන, වෙල්ඩින් වැඩ, කම්මල් වැඩ, බල්බ්, ඇළුමිනියම්, සුදු යකඩ කර්මාන්ත, විසිතුරු මත්ස්‍ය වගාව, කොහු කර්මාන්තය, කොසු, ඉදල් නිපැයුම, රත්තරන්, පිත්තල, වලං කර්මාන්ත, ශරීර සුවතා, දුරකථන සන්නිවේදන, මුද්‍රණ, අධ්‍යාපන ආයතන",
+      "publicId": "historical-product-5b07028275ac3ab3",
+      "category": "business",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SRDBP",
+      "sDes": "කුඩා හෝ මධ්‍ය පරිමාණ ව්‍යාපෘති, ව්‍යාපාර, නිෂ්පාදන කර්මාන්ත සඳහා",
+      "forWho": "සුළු හා මධ්‍ය පරිමාණ ව්‍යවසායකයින්",
+      "iRate": "18%",
+      "maxLimit": "පුද්ගලයින් සඳහා - රු. මිලියන 50 , සමාගම් සඳහා - රු. මිලියන 100",
+      "maxRepay": "අවුරුදු 10",
+      "eligibles": "සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර",
+      "publicId": "historical-product-ba309aced8788d81",
+      "category": "business",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SMELoC",
+      "sDes": "ක්ෂුද්‍ර, සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර සඳහා",
+      "forWho": "නව ව්‍යාපාර හෝ ව්‍යාපෘති ඇරඹීමට අදහස් කරන්නන්, කාන්තා ව්‍යවසායකයින්ට විශේෂයි",
+      "iRate": "8.8%",
+      "maxLimit": "රු. මිලියන 50",
+      "maxRepay": "අවුරුදු 10",
+      "eligibles": "ක්ෂුද්‍ර, සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර",
+      "publicId": "historical-product-ada9c473d5a38b56",
+      "category": "business",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SMILE III",
+      "sDes": "ක්ෂුද්‍ර, සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර සඳහා",
+      "forWho": "සුළු හා මධ්‍ය පරිමාණ ව්‍යවසායකයින්",
+      "iRate": "8%",
+      "maxLimit": "රු. මිලියන 25",
+      "maxRepay": "අවුරුදු 10",
+      "eligibles": "ක්ෂුද්‍ර, සුළු හා මධ්‍ය පරිමාණ ව්‍යාපාර, සත්ව පාලන හා පශු සම්පත්, කෘෂිකර්මාන්ත හා කර්මාන්ත ව්‍යාපෘති",
+      "publicId": "historical-product-1c63dcb98f4971dd",
+      "category": "business",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SAPP 4P",
+      "sDes": "කුඩා කෘෂි ව්‍යාපෘති සඳහා",
+      "forWho": "කුඩා පරිමාණ කෘෂිකර්මයේ යෙදෙන ඔබට",
+      "iRate": "6.5%",
+      "maxLimit": "වයස් සීමා අනුව රු. 300,000 සිට මිලියන 2 දක්වා",
+      "maxRepay": "වාරික ගෙවන ආකාරය හා වයස් සීමා අනුව මාස 18 හෝ අවුරුදු 3 හෝ අවුරුදු 5",
+      "eligibles": "කුඩා පරිමාණ කෘෂි ව්‍යවසාය හෝ ව්‍යාපෘති",
+      "publicId": "historical-product-c8ffcd99c97b61e5",
+      "category": "agriculture",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SAPP RF",
+      "sDes": "කුඩා පරිමාණ කෘෂි කාර්මික කටයුතු සඳහා",
+      "forWho": "කුඩා පරිමාණ කෘෂි ව්‍යවසායකයින් සඳහා",
+      "iRate": "6.5%",
+      "maxLimit": "රු. 300,000 සිට රු. මිලියන 2 දක්වා",
+      "maxRepay": "වාරික ගෙවන ආකාරය හා වයස් සීමා අනුව මාස 18 හෝ අවුරුදු 3 හෝ අවුරුදු 5",
+      "eligibles": "කුඩා පරිමාණ කෘෂි ව්‍යවසාය",
+      "publicId": "historical-product-ef4fdfd6360e62f3",
+      "category": "agriculture",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "නව සපිරි ග්‍රාමීය ණය (NCRCS)",
+      "sDes": "වී වගාව හෝ කන්න භෝග වගාව සඳහා",
+      "forWho": "වී වගාවෙ හෝ කන්න භෝග වගාවේ නිරතවන්නන්ට",
+      "iRate": "9%",
+      "maxLimit": "ඉඩම් ප්‍රමාණය, වගාව හා කන්නය අනුව තීරණය කෙරේ",
+      "maxRepay": "මාස 9",
+      "eligibles": "වී වගාව හෝ කන්න භෝග වගාව ",
+      "publicId": "historical-product-aa9f96cf863e87eb",
+      "category": "agriculture",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SMELoC - tea",
+      "sDes": "තේ වගාව හා ඒ සම්බන්ධ වෙනත් කටයුතුවල යෙදවීමට",
+      "forWho": "කුඩා තේ වතු හිමියන්",
+      "iRate": "4.84%",
+      "maxLimit": "රු. මිලියන 30",
+      "maxRepay": "අවුරුදු 10",
+      "eligibles": "තේ වගා කිරීම, වගා පුනරුත්ථාපනය, නඩත්තුව, ජල සම්පාදනය, තවාන් දැමීම වැනි කටයුතු උදෙසා",
+      "publicId": "historical-product-658efedbdf365943",
+      "category": "agriculture",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "කප්රුක ආයෝජන",
+      "sDes": "පොල් වගාව හා ඒ සම්බන්ධ වෙනත් කටයුතුවල යෙදවීමට",
+      "forWho": "පොල්වගාවෙහි හා ඒ ආශ්‍රිත ව්‍යාපෘති වල නියැලෙන්නන්ට",
+      "iRate": "8%",
+      "maxLimit": "රු. මිලියන 3",
+      "maxRepay": "අවුරුදු 5",
+      "eligibles": "පොල් වගා කිරීම, වගා පුනරුත්ථාපනය, වගාව නඩත්තු කිරීම, වගාවට ජල සම්පාදනය, පොල් වගාව තුළ වෙනත් අතුරු භෝග වගාව, පොල් ඉඩමේ එළ ගව, මී ගව, එළු, බැටළු පාලනය, වගාවට අවශ්‍ය යන්ත්‍රෝපකරණ මිළට ගැනීම",
+      "publicId": "historical-product-0afac4c8bee01074",
+      "category": "coconut",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "කප්රුක ජය ඉසුර",
+      "sDes": "පොල් ආශ්‍රිත නිෂ්පාදන වැඩිදියුණුව සඳහා",
+      "forWho": "පොල් ආශ්‍රිත කර්මාන්ත හා නිෂ්පාදන වල නියුතු ඔබට",
+      "iRate": "ණය අවශ්‍යතාවය අනුව 6% හෝ 8%",
+      "maxLimit": "රු මිලියන 3.5",
+      "maxRepay": "ණය ලබාගත් අවශ්‍යතාවය මත අවුරුදු 3 හෝ අවුරුදු 7",
+      "eligibles": "පෙට්ටි කුට්ටම් ක්‍රමයට කොහු නිෂ්පාදනය, පොල්කටු අඟුරු, පොල්තෙල් නිෂ්පාදනය",
+      "publicId": "historical-product-38ae534128614b93",
+      "category": "coconut",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "කප්තුරු ඉසුර",
+      "sDes": "පොල් වගා ආශ්‍රිත කර්මාන්ත කරුවන්ගේ සංවර්ධනය සඳහා",
+      "forWho": "ප්‍රාථමික කප්රුක සමිති සාමාජික ඔබට",
+      "iRate": "7%",
+      "maxLimit": "රු. 200,000",
+      "maxRepay": "ණය ලබාගත් අවශ්‍යතාවය මත තීරණය කෙරේ",
+      "eligibles": "ප්‍රාථමික කප්රුක සමිති සාමාජිකයන්ට ජීවනෝපාය හෝ තම කර්මාන්තය සංවර්ධනය කර ගැනීමට",
+      "publicId": "historical-product-e5ad8866fd7a05d1",
+      "category": "coconut",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "කප්රුක බෝග ආරක්ෂණ",
+      "sDes": "වගාව ආරක්ෂා කිරීම සඳහා",
+      "forWho": "පොල් වගාව ආරක්ෂණය කිරීමට අවශ්‍ය ඔබට",
+      "iRate": "8%",
+      "maxLimit": "රු මිලියන 2",
+      "maxRepay": "අවුරුදු 5",
+      "eligibles": "වගාව ආරක්ෂාව සඳහා විදුලි වැට හා ආරක්ෂිත වැටවල් ඉදි කිරීම, නඩත්තු කිරීම, අලුත්වැඩියාව, තාක්ෂණික පද්ධති සකස් කිරීම, හා පොල් පැළ ආරක්ෂණ ආවරණ හා වෙනත් ක්‍රමවේද",
+      "publicId": "historical-product-c36bbb4228268acc",
+      "category": "coconut",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "කප්රුක ගොවිපළ යන්ත්‍රෝපකරණ ණය",
+      "sDes": "පොල් වගාව ආශ්‍රිත ගොවිපල යන්ත්‍රෝපකරණ ලබාගැනීමට",
+      "forWho": "පොල්වගාවෙහි හා ඒ ආශ්‍රිත ව්‍යාපෘති වල නියැලෙන්නන්ට",
+      "iRate": "8%",
+      "maxLimit": "රු මිලියන 2",
+      "maxRepay": "අවුරුදු 5",
+      "eligibles": "පොල් වගාව පදනම් කරගත් ගොවිපල පද්ධති සඳහා අවශ්‍ය සියලුම කෘෂි යන්ත්‍රෝපකරණ ලබා ගැනීම සඳහා",
+      "publicId": "historical-product-23ee2f49342301aa",
+      "category": "coconut",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "SMELoC III - Emergency Response",
+      "sDes": "Covid-19 බලපෑමට ලක්වූ ක්ෂුද්‍ර, සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර සඳහා",
+      "forWho": "Covid-19 නිසා එදිනෙදා කටයුතු වලට මූල්‍යයමය අවශ්‍යතා ඇතිවූ ව්‍යාපාර හිමියන්",
+      "iRate": "4.78%",
+      "maxLimit": "රු. මිලියන 10",
+      "maxRepay": "අවුරුදු 3",
+      "eligibles": "ක්ෂුද්‍ර, සුළු හෝ මධ්‍ය ප්‍රමාණයේ ව්‍යවසාය හෝ ව්‍යාපාර",
+      "publicId": "historical-product-b8f10bbe63deabad",
+      "category": "other",
+      "verified": false,
+      "active": true
+    },
+    {
+      "lName": "ප්‍රබෝධනී (PAMP RF) ණය ක්‍රමය",
+      "sDes": "අඩු ආදායම්ලාභීන්ට කුඩා කණ්ඩායම් ණය",
+      "forWho": "ණය ලබා ගැනීමට අපහසු අඩුආදායම්ලාභී ඔබට",
+      "iRate": "12%",
+      "maxLimit": "රු. 50,000",
+      "maxRepay": "අවුරුදු 3",
+      "eligibles": "ගාල්ල, හම්බන්තොට, මාතර, මහනුවර, මාතලේ, නුවරඑළිය, කුරුණෑගල, කෑගල්ල, කොළඹ, ගම්පහ, කළුතර, පුත්තලම දිස්ත්‍රික්ක වල පමණක් ක්‍රියාත්මක වන කුඩා කණ්ඩායම් සාමාජිකයන් හට ඉල්ලුම් කළ හැක.",
+      "publicId": "historical-product-dc8e36ca97eb2075",
+      "category": "other",
+      "verified": false,
+      "active": true
+    }
+  ],
+  "branches": [
+    {
+      "publicId": "historical-branch-8167a3481d296df1",
+      "name": "අගලවත්ත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-18afeb14ffb6da78",
+      "name": "ආගරපතන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3c35affb1a23fc86",
+      "name": "අගුනුකොළපැලැස්ස",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b179b6a0b3e7c55c",
+      "name": "අහංගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-240ffeb35e1dbb8b",
+      "name": "අක්කරේපත්තු",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-64803c817ad5d248",
+      "name": "අක්මීමන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3f509450838b66e7",
+      "name": "අකුරැස්ස",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-29925a17486cca4e",
+      "name": "අලව්ව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0ef921d32b931481",
+      "name": "අම්බලන්තොට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-08ed1531095e6a2e",
+      "name": "අඹන්පොළ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-23b2ff3a2330c1af",
+      "name": "අම්පාර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d3ae7e9fc2d67375",
+      "name": "ආණමඩුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-150fee3be8d0406a",
+      "name": "අනුරාධපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e0041d83ba39c1d1",
+      "name": "අනුරාධපුර නව නගරය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c312532a6762649a",
+      "name": "අරලගන්විල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8e0ce9589478a301",
+      "name": "අරණායක",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-894c948593a4d4bd",
+      "name": "ඇතුගල්පුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8d0eb453a854fb50",
+      "name": "අවිස්සාවේල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7bc74f1bc70eea58",
+      "name": "බඩල්කුඹුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f039c19818e6d8bf",
+      "name": "බද්දේගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e4fb8f1962bbd01f",
+      "name": "බදුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9e3508df0b13def9",
+      "name": "බදුරලිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f8aeb639d7ef45e0",
+      "name": "බකමූණ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-dbfe6918523d85e6",
+      "name": "බලංගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e31c5f6e814e6f53",
+      "name": "බලපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e3a52d6dcf942792",
+      "name": "බණ්ඩාරවෙල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-766a230834723c30",
+      "name": "බරවකුඹුක",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1d4a71645a4d9279",
+      "name": "බටපොල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-19931c645dbb77cf",
+      "name": "බෙලිඅත්ත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e08c75c5dc8ff93a",
+      "name": "බේරුවල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d4103de3a44d6bae",
+      "name": "බිබිලේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a8146653d466f335",
+      "name": "බෝගහකුඹුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d19dbf75eca0e7d4",
+      "name": "බෝගස්වැව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1e8d049f80d4bd2a",
+      "name": "බෝගස්වැව SME",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6908f6dd7ee124ed",
+      "name": "බෝවත්ත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-994e7b7f295825c2",
+      "name": "බුලත්කොහුපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7eb6fd5b1930036e",
+      "name": "බුලත්සිංහල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6c6cc2bb044c9363",
+      "name": "බුත්තල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-19587129a191fe55",
+      "name": "චෙන්කලඩි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3e9444c59c9b063e",
+      "name": "චුන්නාකම්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a72e99f634cd74cd",
+      "name": "දමන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-de3c49f8fec2df33",
+      "name": "දඹුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-dc489df84932469f",
+      "name": "දන්තුරේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a878f4a86f575c66",
+      "name": "දවුල්ගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4200dfd14bd9b20c",
+      "name": "දෙහිඅත්තකණ්ඩිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-23a2a2d23153000a",
+      "name": "දෙහිඕවිට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f007716d4e330e79",
+      "name": "දෙයියන්දර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-022fa647533c67cf",
+      "name": "දැරණියගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-56ac1edaa974774d",
+      "name": "දෙවිනුවර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-04751ed96259808c",
+      "name": "දේවාලෙගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5a85b74e33c72d15",
+      "name": "දික්වැල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f50d3024894df26c",
+      "name": "දිවුලපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5d8df5b80f114e6f",
+      "name": "දියතලාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-251324d316ae71ae",
+      "name": "දොඩංගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e074b8cb4cfee87c",
+      "name": "දුම්මලසූරිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-164f58e74a2fc29d",
+      "name": "ඇහැලියගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-91b6ebf64db059c3",
+      "name": "ඇල්පිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ab99862b4308c6ce",
+      "name": "ඇඹිලිපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b842d4c654f9cd4c",
+      "name": "එරත්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0c2eea221e8df729",
+      "name": "එරාවුර්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7780e18d814d4f44",
+      "name": "ගලමුණ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-17ccd6bd01fd91a3",
+      "name": "ගලෙන්බිඳුනුවැව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d9744c897f0a3e68",
+      "name": "ගලේවෙල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-99243a6b475382df",
+      "name": "ගල්ගමුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ee9f07d76809caa5",
+      "name": "ගාල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-af37e83bad5b2d58",
+      "name": "ගල්නෑව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cc60237b408b57f2",
+      "name": "ගම්පහ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cd70eff98f06d0d9",
+      "name": "ගම්පොල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4b95fdab54e7afec",
+      "name": "ගන්දර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-46dfcdba6d949667",
+      "name": "ගිනිගත්හේන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-10be925a7278b44f",
+      "name": "ගිරාඳුරුකෝට්ටේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8bc63587a7327a5b",
+      "name": "ගිරිඋල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-633a6ce7a42cf1ae",
+      "name": "ගොඩකවෙල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3abed3a8d35b69ce",
+      "name": "ගෝනගලපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7ddd96b59678b099",
+      "name": "ගෝනපතිරාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-dd0a029310cf0f2d",
+      "name": "ගෝනපොළ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-138e3b51ad895663",
+      "name": "හක්මන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9725056c1d81bf59",
+      "name": "හල්දුම්මුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-fa1fbebb3dfb9b26",
+      "name": "හම්බන්තොට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a66042902d236f4a",
+      "name": "හම්බන්තොට නගර 2",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3e28934267bf9278",
+      "name": "හඟුරන්කෙත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1d6af121f82d4efb",
+      "name": "හපුතලේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-29d69431876210b2",
+      "name": "හතරලියද්ද",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-36a1ae6aa5dfff56",
+      "name": "හලාවත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d51c3cde182b7056",
+      "name": "හලාවත ඉසුරු ව්‍යාපෘති",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a73cd35db22cbaf7",
+      "name": "හෑදෙනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7cc1d5c76ac70a99",
+      "name": "හැම්මතගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6a4f1fe4b597ec9c",
+      "name": "හික්කඩුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d94c21065bec786a",
+      "name": "හිඟුරක්ගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-595f74aa11c3b24f",
+      "name": "හෝමාගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f5a66509c293c0c6",
+      "name": "හොරණ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-150d100f35609e18",
+      "name": "ඉබ්බාගමුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b85d1797fdaf382b",
+      "name": "ඉමදුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0524412c95bd3de8",
+      "name": "ඉංගිරිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a033de1dbda8b493",
+      "name": "ජා-ඇළ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ec95665dfe224ecf",
+      "name": "කදුරුවෙල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-49a712ff447d59ae",
+      "name": "කදුරුවෙල නවනගරය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7cdd027e263563d0",
+      "name": "කහටගස්දිගිලිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cf38fd2b6dc13e35",
+      "name": "කහවත්ත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-531e7c6f76ac9c6b",
+      "name": "කලවාන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5e2e913eea327197",
+      "name": "කල්මුණේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-03c8a149c6521b6e",
+      "name": "කල්පිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d1de353a10c0be66",
+      "name": "කළුතර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d368fc4944cc62c2",
+      "name": "කලවංචිකුඩි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2d53288bf18289ef",
+      "name": "කළුඇල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-eabc268c465cb890",
+      "name": "කඹුරුගමුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4bf3833e79627a6d",
+      "name": "කඹුරුපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-fdf32634b0346134",
+      "name": "කනකරායම්කුලම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c5314570acb2ae35",
+      "name": "කන්දෙකැටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-838233bc7462146e",
+      "name": "කන්තලේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b001e64864a268bd",
+      "name": "කරන්දෙනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e1e63ab6093aba17",
+      "name": "කරාපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8e5f5d749763364d",
+      "name": "කාත්තන්කුඩි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0f8100b7e08348d2",
+      "name": "කටුගස්තොට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-62e409baffe3cfc8",
+      "name": "කටුවාන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5e82efefadadf09f",
+      "name": "කෑගල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8fb23186f382228b",
+      "name": "කෑගල්ල දෙවන නගර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-32c9a8c8a99ebfb2",
+      "name": "කැකනදුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-bcd25c52fa72adc1",
+      "name": "කැකිරාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-87854c59964af6f0",
+      "name": "කැලණිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3ae2410cebcfdc44",
+      "name": "කිලිනොච්චි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-673847a10ff61b67",
+      "name": "කිරිඳිවැල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f0f1e9e9e2c2c02d",
+      "name": "කිරිඇල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-92ec04e39441b91a",
+      "name": "කිරිමැටියාන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f336754da0f49656",
+      "name": "කිරින්ද",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f171e8d8286407a7",
+      "name": "කිතුල්ගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-bcb48cce2295b28b",
+      "name": "කොක්කඩිචෝලේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cfe625972400be63",
+      "name": "කොලොන්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5e018b10976479c5",
+      "name": "කොලොන්නාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-770efe3f2497d240",
+      "name": "කොටගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-fcc62b53bae72079",
+      "name": "කොටියාකුඹුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-96dcdfc59a328f5e",
+      "name": "කුලියාපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b3b7e4e8711f8d71",
+      "name": "කුරුණෑගල නගර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a305eab10a3ceb71",
+      "name": "කුරුවිට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3791a3c8f2e5fa5d",
+      "name": "ලග්ගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6b066d5cf9bab751",
+      "name": "ලුණුගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1daf63b88a74d9b1",
+      "name": "ලුණුගම්වෙහෙර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4deefd6bb711466e",
+      "name": "මහනුවර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5d2d7235bde9a3fb",
+      "name": "මහනුවර නගර දෙක",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ac51a0a17cae235a",
+      "name": "මැදවච්චිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-714b0d52bba1fece",
+      "name": "මඩකලපුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a6ae77235514034d",
+      "name": "මඩකලපුව නගර 2",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7937789313b56a74",
+      "name": "මඩුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cc2fb03e94d28993",
+      "name": "මහඔය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-966d8210d99ef4b1",
+      "name": "මහවැව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f3fad55ddb5979dc",
+      "name": "මහියංගනය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-556f91e583ae9b93",
+      "name": "මහෝ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4acb1ed83b258f78",
+      "name": "මාම්පුරි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ecdbc77d48380d0f",
+      "name": "මනන්පිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d288643cd85ed0e7",
+      "name": "මැණික්හින්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c191e37015d08f4c",
+      "name": "මන්නාරම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ca0922dd1a6d754b",
+      "name": "මාරස්සන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-15af1f7a760a8dda",
+      "name": "මාතලේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-40aa727b865f807f",
+      "name": "මාතර නගර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-295ef0d57413ecd6",
+      "name": "මතුගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f88090fdc1620bcb",
+      "name": "මාවනැල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0d2d3298832d22db",
+      "name": "මාවරල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8abcc2831735bfd1",
+      "name": "මාවරමංඩිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-892a6f586201cbff",
+      "name": "මාවතගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-790989e0a31e2cb7",
+      "name": "මැදගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-90d7cee2f1d8441f",
+      "name": "මැදිරිගිරිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-141ee5d8d09d8d6e",
+      "name": "මීගහකිවුල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2ebdac9bf518fccb",
+      "name": "මීගහතැන්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a8a230782025acc2",
+      "name": "මැල්සිරිපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-14c7b9c2d44ae328",
+      "name": "මිද්දෙණිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f943d75bf946f836",
+      "name": "මිහින්තලය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-571c755526a90f5a",
+      "name": "මිල්ලනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e39bac4bd6a140de",
+      "name": "මිනුවන්ගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-59b1c27222786df7",
+      "name": "මීරිගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9bf0a87610477f5f",
+      "name": "මීගමුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-74f670ed9a3b0f9f",
+      "name": "මිරිස්ස",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a515c016d1ee5264",
+      "name": "මිරිස්වත්ත",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7e560a693fe0df30",
+      "name": "මොනරාගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-78868da1299570fc",
+      "name": "මොරගහහේන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4ad69b92b9eb3928",
+      "name": "මොරොන්තුඩුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-32cbc4cd6bd715fe",
+      "name": "මොරවක",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2d9fa1f66d2114df",
+      "name": "මොරයාය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-dd426af2e70799ff",
+      "name": "මුන්දෙල්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-10116879a65b8672",
+      "name": "මුතුර්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4bed7015cc6247cb",
+      "name": "නාරම්මල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8d749aa9cb37c410",
+      "name": "නාත්තන්ඩිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f22af4c7be9dbe05",
+      "name": "නාඋල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3f96ecb1069e9e70",
+      "name": "නවගත්තේගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7fec2c741be64089",
+      "name": "නාවලපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7245bda06d050cff",
+      "name": "නෙළුම්දෙනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4429672e2a4a4130",
+      "name": "නෙළුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-95d90cc490d09e48",
+      "name": "නිකවැරටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0df5d27ec43b8a0f",
+      "name": "නිල්දණ්ඩාහින්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cc2f80222d55b3ae",
+      "name": "නින්තවූර්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c907861052fe51a6",
+      "name": "නිට්ටඹුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-05b28068ddae99c6",
+      "name": "නිවිතිගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8c66479a80d56365",
+      "name": "නුගේගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7afa4f4719fce783",
+      "name": "නුවරඑළිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9f123ff72d04e7cc",
+      "name": "පලකුඩා",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-fd5eaf867677ecff",
+      "name": "පඹුරන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-851588ea6f91d235",
+      "name": "පානදුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-33573623d51d7c73",
+      "name": "පඬුවස්නුවර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-bbbb46e5b01fcf6c",
+      "name": "පන්නල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ca74eb5ffd0ad2d3",
+      "name": "පස්සර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cfdb7833b4f265e4",
+      "name": "පරගහදෙනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b7d9cfc78fee7735",
+      "name": "පැල්මඩුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6c35ed5e86c29906",
+      "name": "පේරාදෙණිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-77703fa4e8e13160",
+      "name": "පැරකුම්පුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-98c5cd17dc7cd5b3",
+      "name": "පිළියන්දල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-18d8abdd9f8f3ca4",
+      "name": "පිටබැද්දර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ebb16b1e6effddd3",
+      "name": "පිටගල්දෙනිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-30155507430e0ffb",
+      "name": "පිට්ටුගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-f959a7cca22524ae",
+      "name": "පොළොන්නරුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0127593402872ddf",
+      "name": "පොල්පිතිගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-cba8bef194fbe3eb",
+      "name": "පොතුහැර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d225ee38e17d0095",
+      "name": "පොතුපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-5aed007aef7a9278",
+      "name": "පොතුවිල්",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2115495e4439954a",
+      "name": "පූජාපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3e9afb0e7d71caa9",
+      "name": "පුලස්තිගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-13418188e8205ae0",
+      "name": "පුළිඟුපිටි",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-842750b54a6dc7c8",
+      "name": "පුන්ඩලු ඔය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c91a8a315d8b290c",
+      "name": "පුත්තලම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ec159e3eca488c11",
+      "name": "රාගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c9baead9553429f4",
+      "name": "රක්වාන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7553b95c97b58dd1",
+      "name": "රඹෑව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-77fa5e1b2f0aa179",
+      "name": "රඹුක්කන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-435079b22f9f616d",
+      "name": "රන්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-99b2605e7c3067cc",
+      "name": "රත්නපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3f6670d5c8a417e7",
+      "name": "රත්තොට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1222e396531463d4",
+      "name": "රිදීගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ad96c54c67fdf300",
+      "name": "රිදීමාලියද්ද",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9cf80d3f9d2e96d3",
+      "name": "රිකිල්ලගස්කඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8c416edd2302b9bc",
+      "name": "රුවන්වැල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-94434114cec3f484",
+      "name": "සමන්තුරේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d88968ef3a35ffbc",
+      "name": "සාන්ත අනාපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-acf5967b12b0eedf",
+      "name": "සෙංකඩගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-970b55e695512e81",
+      "name": "සෙවණගල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d360e8a07bc69240",
+      "name": "සෙවනපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0ed21f96e1baad9e",
+      "name": "සිරිපුර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e4bcad84845661f5",
+      "name": "සියඹලාණ්ඩුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e3e9bee50f045e18",
+      "name": "සූරියවැව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-dad77ab258fa256e",
+      "name": "ශ්‍රී පලාබද්දල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b18c6f67f76e8db3",
+      "name": "තංගල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-a53ae926c6d889a7",
+      "name": "තෙල්දෙණිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-b575a8aa4f039eb0",
+      "name": "තලාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-88e75ba01d2683ff",
+      "name": "තල්ගස්වල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c292617b40b60da6",
+      "name": "තඹුත්තේගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2000d00979f3afaf",
+      "name": "තඹුත්තේගම නගර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-6c3abd67b8d91b11",
+      "name": "තණමල්විල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-579505ae404441a0",
+      "name": "තිහගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4f973defcf70b9f7",
+      "name": "තිරප්පනේ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-989e9affc95f3ba8",
+      "name": "තිස්සමහාරාම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-01f3ccc1d26b026d",
+      "name": "ත්‍රිකුණාමලය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-e59153f74ad7ed5a",
+      "name": "ත්‍රිකුණාමලය නගර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-539c74b5a3aacceb",
+      "name": "උඩවෙල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ac4435b1e323bd5b",
+      "name": "උඩුදුම්බර ගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-4394c2f261752fa8",
+      "name": "උහන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-298afb7d694ef57a",
+      "name": "උරගස්මංහන්දිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-34d6448881c68c64",
+      "name": "ඌරුබොක්ක",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-9ab76e5a71d28b7f",
+      "name": "ඌව මාලිගාතැන්න",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7b9b33ea89090b2b",
+      "name": "ඌව පරණගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-c77531c9f713ff7f",
+      "name": "වාලච්ච‍ෙන",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0ddbec1406286340",
+      "name": "වව්නියාව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-7d176b2eeda375bf",
+      "name": "වාද්දුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d6254cbe9e32ae6a",
+      "name": "වලගෙදර",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-92273492e514cb12",
+      "name": "වලස්මුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-95ba8184a393a210",
+      "name": "වරකාගොඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-1df5b8e5fc9f2d70",
+      "name": "වරකපොල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-2e81a971f123d959",
+      "name": "වරාපිටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d6cf6fb8897384da",
+      "name": "වාරියපොල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-72cae3e805c1251c",
+      "name": "වත්තේගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-d3b724e9a85655c6",
+      "name": "වීරකැටිය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-0d69f28adbe0ff4b",
+      "name": "වැලිගම",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-881550768711097e",
+      "name": "වැලිගෙපොල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-3c74df86f61c2798",
+      "name": "වැලිමඩ",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-12a826bf1e7064d7",
+      "name": "වැල්ලවාය",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-8abbf9c9a7acbe8c",
+      "name": "වෙන්නප්පුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-902a9621dff17216",
+      "name": "විල්ගමුව",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-df859410617433d8",
+      "name": "යක්කලමුල්ල",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-498230bd04edfd12",
+      "name": "යටියන්තොට",
+      "verified": false,
+      "active": true
+    },
+    {
+      "publicId": "historical-branch-ea60e11efca69f56",
+      "name": "යාපනය",
+      "verified": false,
+      "active": true
+    }
+  ],
+  "institutions": []
+}

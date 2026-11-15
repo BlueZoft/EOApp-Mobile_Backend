@@ -2,10 +2,12 @@
   "name": "hetarataapi",
   "version": "1.0.0",
   "description": "Backend API for Hetarata App",
-  "main": "Server.js",
+  "main": "Backend/Server.js",
   "scripts": {
     "start": "node Backend/Server.js",
-    "server": "nodemon Backend/Server.js"
+    "server": "nodemon Backend/Server.js",
+    "test": "node --test",
+    "seed:catalogue": "node scripts/seed-catalogue.js"
   },
   "author": "Akila Ariyathilaka",
   "license": "MIT",

@@ -1,7 +1,16 @@
 #!/usr/bin/env bash
 set -euo pipefail
 cd -- "$(dirname -- "${BASH_SOURCE[0]}")/.."
-if [[ -z "${MONGO_URI:-}" ]]; then
+if [[ ! -d node_modules/dotenv ]]; then
+  echo 'Dependencies are missing; run scripts/setup-dev.sh first.' >&2
+  exit 1
+fi
+# Inspect presence only. Server.js reads the value through dotenv; do not copy or log it.
+_eoapp_has_database=false
+if [[ -n "${MONGO_URI:-}" ]] || node -e "require('dotenv').config(); process.exit(process.env.MONGO_URI ? 0 : 1)"; then
+  _eoapp_has_database=true
+fi
+if [[ "$_eoapp_has_database" == false ]]; then
   # A project-specific container and port avoid changing other local databases.
   _eoapp_image=mongo@sha256:8b6d8f5bbedb25cb73517b65cf99f13aeb75ad5b157a56c479287a840bbad3ac
   _eoapp_container=eoapp-dev-mongo

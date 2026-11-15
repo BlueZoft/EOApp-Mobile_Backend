@@ -38,6 +38,7 @@ const createEnquiry = asyncHandler(async (req, res) => {
         askLoan: product ? product.lName : data.askLoan,
         productId: data.productId, branchId: data.branchId,
         institutionId,
+        ...(data.withdrawalTokenHash ? { withdrawalTokenHash: data.withdrawalTokenHash } : {}),
         sharingConsent: data.sharingConsent === true,
         ...(data.sharingConsent === true ? {
           consentInstitutionId: institutionId, consentVersion: 'institution-contact-v1', consentedAt: new Date()
@@ -46,9 +47,9 @@ const createEnquiry = asyncHandler(async (req, res) => {
       })
       created = true
     } catch (error) {
-      if (!key || error.code !== 11000) throw error
-      enquiry = await Enquiry.findOne({ idempotencyKey: key }).select('+requestHash')
-      if (!enquiry) throw error
+      if (error.code !== 11000) throw error
+      enquiry = key ? await Enquiry.findOne({ idempotencyKey: key }).select('+requestHash') : null
+      if (!enquiry) return res.status(409).json({ message: 'Receipt proof is already registered; use a new proof for a new enquiry' })
     }
   }
   if (key && enquiry.requestHash !== hash) return res.status(409).json({ message: 'Idempotency key already used for different enquiry data' })

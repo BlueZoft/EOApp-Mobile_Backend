@@ -1,3 +1,23 @@
+# Version 1.4.0 — customer withdrawal and retention planning — 2026-11-15
+
+- Continued from clean main checkouts; existing staff/browser/catalogue/setup work was preserved.
+- Added a proof-required `/api/enquiries` submission route so older backends reject the new flow without creating records. The legacy `/api/userdata` path remains compatible.
+- Added hidden, unique withdrawal-proof hashes and `POST /api/enquiries/consent/withdraw`. A device-held capability authorizes withdrawal without exposing personal records or accepting a reference number as proof.
+- Withdrawal atomically disables future staff access, keeps the first withdrawal date and remains retry-safe. A submission replay cannot re-enable sharing. Unknown/lost-response requests retain their proof for later retry.
+- Added OS-backed private receipts before submission, “My enquiries,” confirmation/retry controls and local removal of confirmed withdrawn receipts. Form PII is not copied into the vault; cross-origin proof transmission and remote plain-HTTP APIs are blocked.
+- Android minimum API is now 18 for secure storage; app backup is disabled. The customer app is 1.4.0+4. Native device/iOS key storage still needs real-device validation; automated vault tests inject a memory store.
+- The user delegated the retention period: a configurable operational default of 180 days after the latest closure/withdrawal event is used. The aggregate report has no apply/delete flag, no scheduler and no data mutation. Retention execution/tombstones remain pending review.
+
+## Validation
+
+22 backend API/integration tests, 23 Flutter tests, clean analysis and a sound-null-safe Android debug APK passed. The unchanged staff UI regression suite also passed 9 Chromium browser tests. Local development retention report: zero eligible records and zero undated closed records; no production database was scanned or modified.
+
+Proof/retention coverage includes lost response recovery, duplicate/concurrent withdrawals, staff-update races, refusal of wrong/reference-only credentials, stable receipts after withdrawal, storage failures before/after submission, same-proof retries, malformed acknowledgements, private-vault isolation and a write-free retention plan.
+
+Remaining: verified support for legacy/lost-device recovery, native device/iOS checks, reviewed retention execution and backup/tombstone policy, staff provisioning/managed identity, notification delivery, RDB verification/network access and current Play Store compatibility. No bank notifications, production credentials, data purge or live environment publication were performed.
+
+---
+
 # Backend version 1.3.0 — staff browser workspace — 2026-11-15
 
 - Added the same-origin `/staff/` browser workspace: token sign-in, institution/role identity, status filters, paging, detail views, audit history and caseworker updates. The customer Flutter app remains version 1.2.0 and contains no staff credentials or staff screens.

@@ -33,6 +33,11 @@ function validateEnquiry(body) {
   } else if (body.consentInstitutionId !== undefined) {
     errors.consentInstitutionId = 'Sharing consent must be explicitly true'
   }
+  if (body.withdrawalTokenHash !== undefined) {
+    if (typeof body.withdrawalTokenHash !== 'string' || !/^[a-f0-9]{64}$/.test(body.withdrawalTokenHash)) {
+      errors.withdrawalTokenHash = 'Invalid receipt proof hash'
+    } else data.withdrawalTokenHash = body.withdrawalTokenHash
+  }
   const age = typeof body.age === 'number' || (typeof body.age === 'string' && /^\d+$/.test(body.age.trim())) ? Number(body.age) : NaN
   if (!Number.isInteger(age) || age < 18 || age > 99) errors.age = 'Must be an integer from 18 to 99'
   if (data.name && data.name.length < 4) errors.name = 'Minimum length is 4'

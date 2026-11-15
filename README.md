@@ -1,4 +1,4 @@
-# Hetarata mobile backend — 1.3.0
+# Hetarata mobile backend — 1.4.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 
@@ -33,9 +33,9 @@ Tests require MongoDB at localhost:27017, or `MONGO_TEST_URI`. Each run creates 
 
 ## API contract
 
-### `POST /api/userdata`
+### `POST /api/enquiries` (proof-enabled submissions)
 
-Compatibility path retained for the Android app. JSON fields:
+Version 1.4 clients use this route and must supply a private receipt proof hash. Older backends do not have it and reject the request before creating an enquiry, preventing silent loss of withdrawal support during rollout. `POST /api/userdata` remains a compatibility route for older clients; proof registration is optional there. Both routes use the same validated receipt contract. JSON fields:
 
 | Field | Requirement |
 | --- | --- |
@@ -53,6 +53,7 @@ Compatibility path retained for the Android app. JSON fields:
 | `branchId` | Optional stable branch `publicId` |
 | `sharingConsent` | Optional boolean; defaults to private storage when omitted/false |
 | `consentInstitutionId` | Required only for explicit sharing consent; must match the selected active institution |
+| `withdrawalTokenHash` | Required on `/api/enquiries`, optional on legacy `/api/userdata`; SHA-256 proof hash, 64 lowercase hex characters |
 
 Send a random `Idempotency-Key` header (16–128 letters, digits, `_` or `-`). Reuse it only when retrying the same payload. First creation returns **201**; a matching replay returns **200** with the same body:
 
@@ -82,7 +83,7 @@ Open `/staff/` on the same origin as the API. Sign in with the access token supp
 
 The browser keeps tokens only in memory, clears the password field after submission, and never stores tokens or enquiry records in browser storage/cookies. Sign-out, reload, 15 minutes of inactivity, credential revocation or access failure ends the session and clears displayed records. Non-local HTTP sign-in is refused; deployed staff access requires HTTPS. Do not embed staff tokens in the customer Flutter app.
 
-Local validation: **18 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
+Local validation: **22 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
 
 ```bash
 scripts/setup-browser.sh
@@ -94,6 +95,14 @@ PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:browser
 The helper uses system Chromium when available, otherwise installs Playwright Chromium into a writable project cache. It does not change HOME.
 
 Use `MONGO_TEST_URI=mongodb://127.0.0.1:27018` with the development container if necessary. CI installs Chromium and runs browser checks after the API suite. Hosted CI outcomes remain unverified. No production staff credentials were provisioned by this work.
+
+## Withdrawal and retention planning
+
+Version 1.4 adds `POST /api/enquiries/consent/withdraw`, authorized by a private device token whose hash was registered at submission. It stops future staff access without exposing personal records or relying on a guessable reference number. Requests are retry-safe, and a submission replay cannot restore withdrawn sharing. Older/lost-proof enquiries still require a verified support process.
+
+The customer app stores minimal private receipts in OS-backed secure storage and exposes withdrawal through “My enquiries.” No raw withdrawal token is stored in the server database or returned to staff.
+
+The retention default is 180 days after closure/withdrawal, using the latest valid event date. `MONGO_URI=... npm run retention:report` produces an aggregate dry-run only; there is no delete/apply flag or scheduled cleanup. See [privacy lifecycle and limitations](docs/PRIVACY_LIFECYCLE.md).
 
 ## Initial institution source: RDB
 
@@ -123,7 +132,7 @@ No destructive migration is run. The unique sparse index permits legacy document
 
 ## Limitations and next work
 
-`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership and current terms, operational staff provisioning, consent withdrawal, retention rules, rate limiting and notification delivery remain release prerequisites before public deployment. Existing historical catalogue terms have not been verified. No email is sent.
+`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership and current terms, operational staff provisioning, verified legacy/lost-device recovery, retention execution, rate limiting and notification delivery remain release prerequisites before public deployment. Existing historical catalogue terms have not been verified. No email is sent.
 
 See [action plan](docs/ACTION_PLAN.md) and [release notes](docs/RELEASE_NOTES.md). Run the coordinated frontend update so users receive the new reference and failure behavior.
 

@@ -20,6 +20,8 @@ const schema = new mongoose.Schema({
   consentInstitutionId: String,
   consentVersion: String,
   consentedAt: Date,
+  withdrawalTokenHash: { type: String, select: false },
+  consentWithdrawnAt: Date,
   statusChangedAt: Date,
   statusHistory: { type: [new mongoose.Schema({
     fromStatus: { type: String, enum: ['received', 'contacted', 'closed'], required: true },
@@ -31,6 +33,8 @@ const schema = new mongoose.Schema({
   requestHash: { type: String, select: false }
 }, { timestamps: true, collection: 'users' })
 schema.index({ idempotencyKey: 1 }, { unique: true, sparse: true })
+schema.index({ withdrawalTokenHash: 1 }, { unique: true, sparse: true })
+schema.index({ consentWithdrawnAt: 1 })
 schema.index({ institutionId: 1, _id: -1 })
 schema.index({ institutionId: 1, status: 1, _id: -1 })
 module.exports = mongoose.model('Enquiry', schema)

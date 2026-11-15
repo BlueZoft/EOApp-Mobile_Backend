@@ -74,4 +74,8 @@ Invalid/missing credentials return 401, insufficient role or inactive institutio
 
 ## Remaining deployment work
 
-Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO and production credential provisioning, consent withdrawal/customer verification, retention procedures and notification delivery remain separate work. A receipt/reference number is not authorization to view or modify personal data.
+Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO and production credential provisioning, verified support for legacy/lost-device withdrawal, retention execution and notification delivery remain separate work. A receipt/reference number is not authorization to view or modify personal data.
+
+## Customer withdrawal
+
+Version 1.4 adds device-proof withdrawal, described in PRIVACY_LIFECYCLE.md. Staff tokens cannot authorize it. After withdrawal the scoped API stops returning the record; the browser refreshes its inbox when a detail request reports it unavailable. This does not recall information already viewed. No withdrawal or retention operation is exposed through staff status updates.

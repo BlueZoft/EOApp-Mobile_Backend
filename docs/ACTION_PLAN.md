@@ -52,7 +52,8 @@
 - [x] Commit the staff/consent milestone directly to main.
 - [x] Implement the staff browser workspace using the scoped API.
 - [ ] Provision authorized staff identities; no production tokens are configured by this work.
-- [ ] Implement consent withdrawal/retention and operational notification delivery.
+- [x] Implement device-proof consent withdrawal and dry-run retention planning.
+- [ ] Implement verified legacy/lost-device recovery, retention execution and operational notification delivery.
 
 ## Staff browser milestone status
 - [x] Add sign-in, paginated/filterable inbox, detail/audit views and role-aware status actions.
@@ -61,6 +62,16 @@
 - [x] Verify 18 backend tests and 9 Chromium browser tests, including narrow-screen behavior.
 - [x] Persist browser setup/test commands and CI checks; update documentation.
 - [ ] Provision authorized staff identities and verify hosted CI; no external bank messages are sent by this milestone.
+
+## Withdrawal and retention-planning milestone status
+- [x] Register hidden, unique withdrawal-proof hashes; add atomic, retry-safe withdrawal without reference-only authorization.
+- [x] Persist minimal pending receipts before submission in OS-backed storage; expose customer withdrawal and safe retry controls.
+- [x] Keep old/unproven records on a verified-support path; no public identity bypass is added.
+- [x] Use a configurable 180-day operational default after the latest closure/withdrawal event.
+- [x] Provide aggregate dry-run retention reports only; no apply/delete command or scheduler.
+- [x] Validate 22 backend tests, 23 Flutter tests, clean analysis and a secure-storage Android debug build.
+- [ ] Verify real-device secure storage, recovery/support policy and iOS behavior.
+- [ ] Design and review retention execution/tombstones before deleting or anonymizing records.
 
 ## Follow-up refactoring
 - Verified institution ownership data, operational staff provisioning and enquiry notification delivery.

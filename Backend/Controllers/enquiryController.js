@@ -1,5 +1,6 @@
 const asyncHandler = require('express-async-handler')
 const Loan = require('../Models/loanModel')
+const Institution = require('../Models/institutionModel')
 const Branch = require('../Models/branchModel')
 const Enquiry = require('../Models/enquiryModel')
 const { validateEnquiry, fingerprint } = require('../Validation/enquiry')
@@ -24,6 +25,11 @@ const createEnquiry = asyncHandler(async (req, res) => {
     if (product && branch && product.institutionId && branch.institutionId && product.institutionId !== branch.institutionId) {
       return res.status(400).json({ message: 'Branch does not belong to the product institution' })
     }
+    const institutionId = product ? product.institutionId : branch ? branch.institutionId : undefined
+    if (data.sharingConsent === true && (!institutionId || data.consentInstitutionId !== institutionId ||
+        !await Institution.exists({ publicId: institutionId, active: true }))) {
+      return res.status(400).json({ message: 'Sharing consent must match the selected active institution' })
+    }
     try {
       enquiry = await Enquiry.create({
         Name: data.name, Age: data.age, NIC: data.NIC, Sex: data.sex,
@@ -31,7 +37,11 @@ const createEnquiry = asyncHandler(async (req, res) => {
         Inquiry: data.inquiry, Branch: branch ? branch.name : data.branch,
         askLoan: product ? product.lName : data.askLoan,
         productId: data.productId, branchId: data.branchId,
-        institutionId: product ? product.institutionId : branch ? branch.institutionId : undefined,
+        institutionId,
+        sharingConsent: data.sharingConsent === true,
+        ...(data.sharingConsent === true ? {
+          consentInstitutionId: institutionId, consentVersion: 'institution-contact-v1', consentedAt: new Date()
+        } : {}),
         ...(key ? { idempotencyKey: key, requestHash: hash } : {})
       })
       created = true
@@ -42,6 +52,7 @@ const createEnquiry = asyncHandler(async (req, res) => {
     }
   }
   if (key && enquiry.requestHash !== hash) return res.status(409).json({ message: 'Idempotency key already used for different enquiry data' })
-  return res.status(created ? 201 : 200).json({ enquiryId: enquiry.id, status: enquiry.status || 'received' })
+  // This is the immutable submission receipt, not the current staff workflow status.
+  return res.status(created ? 201 : 200).json({ enquiryId: enquiry.id, status: 'received' })
 })
 module.exports = { createEnquiry }

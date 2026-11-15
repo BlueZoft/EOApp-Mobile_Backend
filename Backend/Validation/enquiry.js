@@ -22,6 +22,17 @@ function validateEnquiry(body) {
       else data[key] = body[key]
     }
   }
+  if (body.sharingConsent !== undefined) {
+    if (typeof body.sharingConsent !== 'boolean') errors.sharingConsent = 'Must be a boolean'
+    else data.sharingConsent = body.sharingConsent
+  }
+  if (body.sharingConsent === true) {
+    if (typeof body.consentInstitutionId !== 'string' || !/^[a-zA-Z0-9_-]{1,100}$/.test(body.consentInstitutionId)) {
+      errors.consentInstitutionId = 'An explicit institution is required for sharing consent'
+    } else data.consentInstitutionId = body.consentInstitutionId
+  } else if (body.consentInstitutionId !== undefined) {
+    errors.consentInstitutionId = 'Sharing consent must be explicitly true'
+  }
   const age = typeof body.age === 'number' || (typeof body.age === 'string' && /^\d+$/.test(body.age.trim())) ? Number(body.age) : NaN
   if (!Number.isInteger(age) || age < 18 || age > 99) errors.age = 'Must be an integer from 18 to 99'
   if (data.name && data.name.length < 4) errors.name = 'Minimum length is 4'

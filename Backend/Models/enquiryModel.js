@@ -15,9 +15,22 @@ const schema = new mongoose.Schema({
   productId: String,
   branchId: String,
   institutionId: String,
-  status: { type: String, enum: ['received'], default: 'received' },
+  status: { type: String, enum: ['received', 'contacted', 'closed'], default: 'received' },
+  sharingConsent: { type: Boolean, default: false },
+  consentInstitutionId: String,
+  consentVersion: String,
+  consentedAt: Date,
+  statusChangedAt: Date,
+  statusHistory: { type: [new mongoose.Schema({
+    fromStatus: { type: String, enum: ['received', 'contacted', 'closed'], required: true },
+    toStatus: { type: String, enum: ['received', 'contacted', 'closed'], required: true },
+    actorId: { type: String, required: true },
+    at: { type: Date, required: true }
+  }, { _id: false })], default: [], select: false },
   idempotencyKey: { type: String, select: false },
   requestHash: { type: String, select: false }
 }, { timestamps: true, collection: 'users' })
 schema.index({ idempotencyKey: 1 }, { unique: true, sparse: true })
+schema.index({ institutionId: 1, _id: -1 })
+schema.index({ institutionId: 1, status: 1, _id: -1 })
 module.exports = mongoose.model('Enquiry', schema)

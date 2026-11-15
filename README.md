@@ -1,4 +1,4 @@
-# Hetarata mobile backend — 1.1.0
+# Hetarata mobile backend — 1.2.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 
@@ -51,6 +51,8 @@ Compatibility path retained for the Android app. JSON fields:
 | `inquiry` | Optional string, at most 250 characters |
 | `productId` | Optional stable catalogue `publicId`; omit for general enquiries |
 | `branchId` | Optional stable branch `publicId` |
+| `sharingConsent` | Optional boolean; defaults to private storage when omitted/false |
+| `consentInstitutionId` | Required only for explicit sharing consent; must match the selected active institution |
 
 Send a random `Idempotency-Key` header (16–128 letters, digits, `_` or `-`). Reuse it only when retrying the same payload. First creation returns **201**; a matching replay returns **200** with the same body:
 
@@ -84,6 +86,12 @@ MONGO_URI=mongodb://127.0.0.1:27018/eoapp npm run seed:institutions
 
 This insert-only command is repeatable and leaves verification pending; it does not assign the historical schemes/branches or send enquiries. Source access is currently blocked by the environment allowlist, and the draft network update was rejected as uneditable. See [curation procedure](docs/INSTITUTION_CURATION.md) and [required network additions](docs/NETWORK_REQUIREMENTS.md). Do not mark records verified from the URL alone.
 
+## Institution-scoped staff API
+
+Version 1.2 adds a staff inbox and audited status updates under `/api/staff/enquiries`. It is disabled until trusted staff credentials are configured. Readers cannot update status; caseworkers can move received → contacted/closed and contacted → closed. Every operation is scoped to the authenticated institution and requires explicit, institution-bound sharing consent. Historical/unconsented records stay private.
+
+The API excludes NIC, age, sex and street address. Status updates use an expected-state check and atomic audit writes to prevent lost updates. Submission retries retain the original `received` receipt after staff workflow changes. No notifications are sent and no customer/staff UI login is added. See [staff activation and API contract](docs/STAFF_ACCESS.md). Local tests use synthetic credentials; do not supply real tokens in chat or app builds.
+
 ## Structure and compatibility
 
 - `Backend/app.js`: Express setup, independently testable without listening at import.
@@ -96,7 +104,7 @@ No destructive migration is run. The unique sparse index permits legacy document
 
 ## Limitations and next work
 
-`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership and current terms, staff authorization, consent workflow, retention rules, rate limiting and delivery remain release prerequisites before public deployment. Existing historical catalogue terms have not been verified. No email is sent.
+`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership and current terms, operational staff provisioning, consent withdrawal, retention rules, rate limiting and notification delivery remain release prerequisites before public deployment. Existing historical catalogue terms have not been verified. No email is sent.
 
 See [action plan](docs/ACTION_PLAN.md) and [release notes](docs/RELEASE_NOTES.md). Run the coordinated frontend update so users receive the new reference and failure behavior.
 

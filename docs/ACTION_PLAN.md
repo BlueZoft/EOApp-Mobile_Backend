@@ -41,8 +41,20 @@
 - [ ] Enable `rdb.lk` and `www.rdb.lk` in environment settings (draft save rejected).
 - [ ] Review current product pages/branch directory, assign confirmed ownership and record verification evidence.
 
+## Staff access and consent milestone status
+- [x] Inspect clean main checkouts and preserve completed reliability/catalogue/build work.
+- [x] Add institution-scoped staff inbox/detail APIs, reader/caseworker roles and fail-closed credential configuration.
+- [x] Add atomic, audited workflow status changes with stale-update protection.
+- [x] Preserve original submission receipts after staff status changes.
+- [x] Require explicit institution-bound consent for staff visibility; leave older records private.
+- [x] Add named-recipient opt-in controls and reset consent when branch selection changes.
+- [x] Complete validation and documentation for version 1.2.0: 16 backend tests, 13 Flutter tests, clean analysis and a debug APK.
+- [x] Commit the staff/consent milestone directly to main.
+- [ ] Provision authorized staff identities and a staff UI; no production tokens are configured by this work.
+- [ ] Implement consent withdrawal/retention and operational notification delivery.
+
 ## Follow-up refactoring
-- Institution ownership data, staff authorization and enquiry delivery.
+- Verified institution ownership data, operational staff provisioning/UI and enquiry notification delivery.
 - Verified catalogue curation, localization and smaller reusable Flutter widgets.
 - Current Flutter/Dart 3 and Play Store target upgrade, followed by device/release checks.
 

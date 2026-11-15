@@ -23,4 +23,4 @@ This insert-only command registers public source metadata. It does not overwrite
 5. Set `verified: true`, `verifiedAt` and `sourceUrl` only for records supported by the reviewed source. A network fetch date is not evidence of current rates by itself.
 6. Refresh the mobile API/cache and record the reviewed changes in release notes. Define a review/expiry cadence before public deployment.
 
-Other banks require their own official public scheme/branch sources. Provider registration is separate from staff authorization and routing. Delivery must not be enabled until authorized recipients, data-sharing consent and operational ownership are established.
+Other banks require their own official public scheme/branch sources. Provider registration is separate from staff provisioning and notification routing. The scoped staff API now exists but is disabled without credentials and only reveals explicitly consented records. See STAFF_ACCESS.md. Delivery must not be enabled until authorized recipients and operational ownership are established; this source registration does not enable staff access or notifications.

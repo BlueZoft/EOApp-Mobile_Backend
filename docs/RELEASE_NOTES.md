@@ -1,3 +1,26 @@
+# Version 1.2.0 — scoped staff inbox and sharing consent — 2026-11-15
+
+## Continued from the existing implementation
+
+The repositories were clean on main when work resumed. Reliability fixes, catalogue/cache migration, null safety, setup scripts and Android build restoration were retained. RDB access was rechecked and is still blocked by the environment allowlist; the existing uneditable draft was not resubmitted unchanged.
+
+## Added
+
+- Institution-scoped staff inbox/detail APIs with reader/caseworker roles, token-hash bindings, fail-closed defaults and non-cacheable responses. No production credentials were generated or enabled.
+- Expected-state status updates (received/contacted/closed) with atomic server-attributed audit history, duplicate retry handling and conflict protection.
+- Explicit sharing consent bound to an active, server-resolved institution. Staff visibility requires matching recipient, policy version and consent date. Historical/unconsented/unassigned records remain private.
+- Named-recipient opt-in checkbox in the customer form; consent starts off and resets when branches change. Unknown recipients cannot receive blanket consent.
+- Original public submission receipts stay `{enquiryId, status: received}` after workflow changes, preserving client retry behavior.
+- Staff API never returns NIC, age, sex, street address or retry hashes. No bank notifications or messages are sent.
+
+## Validation and remaining work
+
+16 real-MongoDB backend tests and 13 Flutter tests passed; Flutter analysis is clean and the version 1.2.0 debug APK built with sound null safety. Coverage includes authentication/config failures, provider isolation, field projection, pagination, role enforcement, concurrent updates, consent binding, private-record exclusion and receipt replay after closure.
+
+Remaining: RDB source verification and ownership assignment (network blocked), authorized staff provisioning/UI, consent withdrawal/retention, notification delivery, current Play Store compatibility, device testing and hosted CI result verification. Local tests do not establish production staff access or institutional delivery.
+
+---
+
 # Initial RDB source registration — 2026-11-15
 
 - The user nominated Sri Lankan banks and supplied https://www.rdb.lk/loans-and-advance/ . Added stable institution ID `rdb` and an insert-only source-registration command.

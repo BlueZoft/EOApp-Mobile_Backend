@@ -1,3 +1,19 @@
+# Reproducible build milestone — 2026-11-15
+
+- Completed code from the reliability/catalogue milestones is pushed directly to `main` in both repositories, as requested. Earlier feature branches are retained.
+- Added repository-owned setup scripts that recreate Flutter/JDK/Android prerequisites and writable caches without relying on environment-draft persistence. Bootstrap pins Flutter's official commit and verifies JDK/Android archives; proxy CA trust stays enabled.
+- Restored and tracked Gradle wrapper launchers/JAR and pinned the official Gradle distribution checksum. Updated AGP to 7.3.1/Gradle 7.6.1/SDK 33/JDK 17, removed the manifest placeholder and made the launcher export explicit.
+- Updated the dependency lockfile for Flutter 3.7.12's SDK-pinned test dependencies and package hashes.
+- Added small-screen form and empty-branch widget checks, plus CI workflow definitions for both repositories. GitHub-hosted CI outcomes are not yet verified.
+
+## Validation
+
+Flutter analysis: no issues. **10 Flutter tests passed.** Debug APK compilation succeeded, including a repeat build with the reusable environment script. **7 backend integration tests passed**, including against the recreated development MongoDB. Fresh-directory Android/JDK checksum/extraction smoke check and repeated setup succeeded. Backend development startup served the expected empty catalogue without importing data.
+
+No Android device is attached, so installation/device flows remain untested. Null safety, a current Play Store toolchain/target, release signing, verified institution data and staff authorization/delivery remain outstanding. A debug APK is not a production release.
+
+---
+
 # Catalogue milestone — 2026-11-15
 
 - Imported source data into a versioned historical snapshot: 15 schemes and 276 branches with stable IDs; all unverified, no invented provider assignments.

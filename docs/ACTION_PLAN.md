@@ -8,7 +8,8 @@
 - [x] Extract the mobile API client, configure the endpoint, and add safe submission states.
 - [x] Fix age validation and form layout; replace forced app exit with navigation.
 - [x] Exercise API integration checks and update both READMEs with contracts and limitations.
-- [ ] Run Flutter analysis/tests and Android device/build checks (SDK/build-tool work outstanding).
+- [x] Run Flutter analysis and 10 tests; restore the Android wrapper and compile a debug APK.
+- [ ] Verify installation and enquiry flow on an Android device (no device attached).
 
 ## Catalogue milestone status
 - [x] Preserve all 15 historical schemes and 276 branches in an insert-only import, with stable public IDs.
@@ -17,8 +18,15 @@
 - [x] Load the API catalogue in Flutter; retain a versioned cache and an explicitly historical bundled fallback.
 - [x] Show offline/unverified notices, handle empty categories and restrict branch choices when ownership is known.
 - [x] Add tests for import repeatability, references, cache and fallback behavior; update documentation.
-- [ ] Run the new Flutter tests/analyzer (SDK unavailable); verify Android on a device.
+- [x] Run catalogue tests/analyzer on the pinned SDK; verify debug APK compilation.
+- [ ] Verify Android behavior on a real device or emulator.
 - [ ] Assign institution ownership and verify current terms from authoritative sources before public release.
+
+## Reproducible build milestone status
+- [x] Push completed work directly to main in both repositories.
+- [x] Store idempotent setup scripts in Git so environment resets are recoverable.
+- [x] Verify Flutter analysis, 10 tests, backend tests, fresh tool extraction and repeated debug compilation.
+- [x] Add CI workflow definitions; hosted execution results remain unverified.
 
 ## Follow-up refactoring
 - Institution ownership data, staff authorization and enquiry delivery.

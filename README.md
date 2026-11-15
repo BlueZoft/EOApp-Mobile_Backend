@@ -14,6 +14,15 @@ MONGO_URI=mongodb://127.0.0.1:27017/eoapp npm start
 # Or npm run server for nodemon
 ```
 
+For an environment that has lost its prepared state:
+
+```bash
+scripts/setup-dev.sh
+scripts/start-dev.sh
+```
+
+The start script uses a separate, pinned local MongoDB container (`eoapp-dev-mongo`, host port **27018**) when `MONGO_URI` is unset. It reuses its named volume, waits for readiness and never imports or overwrites application data automatically. With this container, run tests using `MONGO_TEST_URI=mongodb://127.0.0.1:27018 npm test`. Set `MONGO_URI` to use your own database instead. Scripts must be rerun after machine resets; live processes are not persistent configuration. Docker and Node.js are prerequisites.
+
 `PORT` defaults to 5000. A root `.env` file is supported and ignored by Git. MongoDB must be running; startup waits for the connection and unique enquiry index before accepting requests. Do not put database credentials in source control.
 
 ```bash

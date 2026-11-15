@@ -20,3 +20,5 @@ jobs:
           cache: npm
       - run: npm ci --no-audit --no-fund
       - run: npm test
+      - run: scripts/setup-browser.sh --with-deps
+      - run: npm run test:browser

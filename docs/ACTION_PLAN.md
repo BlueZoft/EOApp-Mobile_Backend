@@ -50,11 +50,20 @@
 - [x] Add named-recipient opt-in controls and reset consent when branch selection changes.
 - [x] Complete validation and documentation for version 1.2.0: 16 backend tests, 13 Flutter tests, clean analysis and a debug APK.
 - [x] Commit the staff/consent milestone directly to main.
-- [ ] Provision authorized staff identities and a staff UI; no production tokens are configured by this work.
+- [x] Implement the staff browser workspace using the scoped API.
+- [ ] Provision authorized staff identities; no production tokens are configured by this work.
 - [ ] Implement consent withdrawal/retention and operational notification delivery.
 
+## Staff browser milestone status
+- [x] Add sign-in, paginated/filterable inbox, detail/audit views and role-aware status actions.
+- [x] Keep credentials in memory and clear visible records on session termination/access failure.
+- [x] Handle idle expiry, delayed replies, concurrent changes and unavailable/private enquiries.
+- [x] Verify 18 backend tests and 9 Chromium browser tests, including narrow-screen behavior.
+- [x] Persist browser setup/test commands and CI checks; update documentation.
+- [ ] Provision authorized staff identities and verify hosted CI; no external bank messages are sent by this milestone.
+
 ## Follow-up refactoring
-- Verified institution ownership data, operational staff provisioning/UI and enquiry notification delivery.
+- Verified institution ownership data, operational staff provisioning and enquiry notification delivery.
 - Verified catalogue curation, localization and smaller reusable Flutter widgets.
 - Current Flutter/Dart 3 and Play Store target upgrade, followed by device/release checks.
 

@@ -32,9 +32,9 @@ const staffAuth = asyncHandler(async (req, res, next) => {
   const hash = crypto.createHash('sha256').update(match[1]).digest()
   const binding = bindings.find(entry => crypto.timingSafeEqual(hash, Buffer.from(entry.tokenHash, 'hex')))
   if (!binding) return res.status(401).json({ message: 'Valid staff authentication required' })
-  const institution = await Institution.exists({ publicId: binding.institutionId, active: true })
+  const institution = await Institution.findOne({ publicId: binding.institutionId, active: true }).select('name -_id').lean()
   if (!institution) return res.status(403).json({ message: 'Staff institution is unavailable' })
-  req.staff = { staffId: binding.staffId, institutionId: binding.institutionId, role: binding.role }
+  req.staff = { staffId: binding.staffId, institutionId: binding.institutionId, institutionName: institution.name, role: binding.role }
   next()
 })
 

@@ -1,7 +1,18 @@
 const express = require('express')
+const path = require('node:path')
 const { errorHandler } = require('./Middleware/errorMiddleware')
 const app = express()
 app.disable('x-powered-by')
+app.use('/staff', (req, res, next) => {
+  res.set({
+    'Cache-Control': 'no-store',
+    'Content-Security-Policy': "default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'none'; object-src 'none'; base-uri 'none'; frame-ancestors 'none'; form-action 'self'",
+    'X-Content-Type-Options': 'nosniff',
+    'Referrer-Policy': 'no-referrer',
+    'X-Frame-Options': 'DENY'
+  })
+  next()
+}, express.static(path.join(__dirname, '../public/staff'), { etag: false, cacheControl: false }))
 app.use(express.json({ limit: '16kb' }))
 app.get('/api/catalogue', require('./Controllers/catalogueController').getCatalogue)
 app.use('/api/loans', require('./Routes/loanRoute'))

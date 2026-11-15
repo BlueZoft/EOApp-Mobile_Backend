@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>Hetarata · Staff enquiries</title>
+  <link rel="stylesheet" href="/staff/staff.css">
+  <script src="/staff/staff.js" defer></script>
+</head>
+<body>
+  <header><div><p class="brand">HETARATA</p><h1>Staff enquiries</h1></div><button id="logout" hidden>Sign out</button></header>
+  <main>
+    <p id="notice" role="status" aria-live="polite"></p>
+    <section id="login" class="card sign-in">
+      <h2>Sign in to your institution</h2>
+      <p>Use the access token supplied by your administrator. It stays in this page's memory and is cleared when you sign out, reload, or are inactive for 15 minutes.</p>
+      <form id="login-form" autocomplete="off">
+        <label for="token">Staff access token</label>
+        <input id="token" type="password" autocomplete="off" spellcheck="false" required>
+        <button id="signin" type="submit">Sign in</button>
+      </form>
+    </section>
+    <section id="workspace" hidden aria-label="Institution workspace">
+      <div class="workspace-heading"><p id="identity"></p><p class="muted">Times shown in Sri Lanka time</p></div>
+      <div class="columns">
+        <section class="card" aria-labelledby="inbox-title">
+          <h2 id="inbox-title">Enquiry inbox</h2>
+          <div class="toolbar">
+            <label for="status-filter">Status</label>
+            <select id="status-filter"><option value="">All statuses</option><option value="received">Received</option><option value="contacted">Contacted</option><option value="closed">Closed</option></select>
+            <button id="refresh">Refresh</button>
+          </div>
+          <p id="empty" hidden>No enquiries match this filter. Only enquiries with sharing consent for your institution are shown.</p>
+          <div class="table-wrap"><table><caption class="sr-only">Enquiries shared with your institution</caption><thead><tr><th>Applicant</th><th>Scheme</th><th>Status</th><th>Action</th></tr></thead><tbody id="rows"></tbody></table></div>
+          <div class="pagination"><button id="newest">Newest</button><button id="older" disabled>Older enquiries</button></div>
+        </section>
+        <section class="card details" aria-labelledby="detail-title"><h2 id="detail-title">Enquiry details</h2><div id="detail"><p>Select an enquiry to view its details.</p></div></section>
+      </div>
+      <p class="muted">Status changes record staff follow-up. They do not send messages or confirm credit approval.</p>
+    </section>
+  </main>
+</body>
+</html>

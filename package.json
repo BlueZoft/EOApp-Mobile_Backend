@@ -1,6 +1,6 @@
 {
   "name": "hetarataapi",
-  "version": "1.2.0",
+  "version": "1.3.0",
   "description": "Backend API for Hetarata App",
   "main": "Backend/Server.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "server": "nodemon Backend/Server.js",
     "test": "node --test",
     "seed:catalogue": "node scripts/seed-catalogue.js",
-    "seed:institutions": "node scripts/seed-institutions.js"
+    "seed:institutions": "node scripts/seed-institutions.js",
+    "test:browser": "scripts/test-browser.sh"
   },
   "author": "Akila Ariyathilaka",
   "license": "MIT",
@@ -23,6 +24,7 @@
     "nodemailer": "^6.7.3"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.15",
+    "playwright": "1.62.1"
   }
 }

@@ -1,3 +1,19 @@
+# Backend version 1.3.0 — staff browser workspace — 2026-11-15
+
+- Added the same-origin `/staff/` browser workspace: token sign-in, institution/role identity, status filters, paging, detail views, audit history and caseworker updates. The customer Flutter app remains version 1.2.0 and contains no staff credentials or staff screens.
+- Tokens remain in memory only. Sign-out, reload/navigation, inactivity and authentication/access failures clear the session and displayed records. Late responses cannot restore signed-out data. Expiry is checked even when background timers are delayed.
+- Added HTTPS enforcement in browser sign-in outside loopback development, restrictive browser headers, text-only record rendering and non-cacheable assets/data. The backend remains the institution/consent/role authorization boundary.
+- Conflicting updates load the latest detail before another action. Enquiries that become unavailable/private are removed from the current browser view.
+- Added the authenticated `/api/staff/session` identity endpoint, repository-owned browser setup/test helpers and CI browser checks.
+
+## Validation
+
+18 backend API/integration tests and 9 real-Chromium browser tests passed using synthetic institutions, transient tokens and isolated MongoDB databases. Browser checks cover normal casework, provider/privacy boundaries, paging/filtering, escaped content, readers, audit updates, inactivity, access revocation, delayed-response sign-out races, concurrent changes, HTTP refusal, mobile layout and consent removal. Hosted CI results remain unverified.
+
+No customer-app source changed in this milestone, so its previously passing 13 Flutter tests/debug build were not repeated. No production credentials were generated or enabled. Staff provisioning/managed identity, consent withdrawal/customer verification and retention, notifications, RDB verification/network access and device/Play Store work remain outstanding.
+
+---
+
 # Version 1.2.0 — scoped staff inbox and sharing consent — 2026-11-15
 
 ## Continued from the existing implementation

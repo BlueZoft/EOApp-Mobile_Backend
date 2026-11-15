@@ -206,3 +206,27 @@ test('sharing consent is explicit, institution-bound and required for staff visi
   assert.equal((await request(`/enquiries/${sharedId}`)).status, 200)
   assert.equal((await request(`/enquiries/${sharedId}`, tokens.other)).status, 404)
 })
+
+test('session endpoint returns only the authenticated staff identity', async () => {
+  const response = await request('/session')
+  assert.equal(response.status, 200)
+  assert.equal(response.headers.get('cache-control'), 'no-store')
+  assert.deepEqual(await response.json(), { staff: {
+    staffId: 'alpha-worker', institutionId: 'staff-alpha', institutionName: 'Test alpha', role: 'caseworker'
+  } })
+  assert.equal((await request('/session', null)).status, 401)
+})
+
+test('staff interface shell is public but contains no records and uses restrictive browser headers', async () => {
+  const response = await fetch(base + '/staff/')
+  assert.equal(response.status, 200)
+  assert.equal(response.headers.get('cache-control'), 'no-store')
+  assert.equal(response.headers.get('x-frame-options'), 'DENY')
+  assert.ok(response.headers.get('content-security-policy').includes("frame-ancestors 'none'"))
+  assert.ok(!response.headers.get('content-security-policy').includes('unsafe-inline'))
+  const html = await response.text()
+  assert.ok(html.includes('Staff enquiries'))
+  assert.ok(!html.includes(person.Name))
+  assert.equal((await fetch(base + '/staff/staff.js')).status, 200)
+  assert.equal((await fetch(base + '/staff/.env')).status, 404)
+})

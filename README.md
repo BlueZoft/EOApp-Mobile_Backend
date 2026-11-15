@@ -1,4 +1,4 @@
-# Hetarata mobile backend — 1.2.0
+# Hetarata mobile backend — 1.3.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 
@@ -76,6 +76,25 @@ Returns `{schemaVersion: 1, products: [...], branches: [...], institutions: [...
 
 Returns `{"loans": [...]}` from MongoDB. Optional `?category=business|agriculture|coconut|other`; invalid categories return **400**. An empty database returns an empty list. Existing records without category remain in unfiltered results only. Inactive records are excluded. This compatibility endpoint retains the `{loans: [...]}` response; the app now uses `/api/catalogue`.
 
+## Staff browser workspace
+
+Open `/staff/` on the same origin as the API. Sign in with the access token supplied through your administrator's secure process. The interface provides status filters, paginated inbox/detail views, status history and caseworker updates. Readers see no update controls; the backend independently enforces permissions.
+
+The browser keeps tokens only in memory, clears the password field after submission, and never stores tokens or enquiry records in browser storage/cookies. Sign-out, reload, 15 minutes of inactivity, credential revocation or access failure ends the session and clears displayed records. Non-local HTTP sign-in is refused; deployed staff access requires HTTPS. Do not embed staff tokens in the customer Flutter app.
+
+Local validation: **18 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
+
+```bash
+scripts/setup-browser.sh
+npm run test:browser
+# Optional local installed Chromium:
+PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:browser
+```
+
+The helper uses system Chromium when available, otherwise installs Playwright Chromium into a writable project cache. It does not change HOME.
+
+Use `MONGO_TEST_URI=mongodb://127.0.0.1:27018` with the development container if necessary. CI installs Chromium and runs browser checks after the API suite. Hosted CI outcomes remain unverified. No production staff credentials were provisioned by this work.
+
 ## Initial institution source: RDB
 
 The first nominated provider is `rdb`, with the user-supplied official catalogue URL https://www.rdb.lk/loans-and-advance/ . Register source metadata explicitly with:
@@ -90,7 +109,7 @@ This insert-only command is repeatable and leaves verification pending; it does 
 
 Version 1.2 adds a staff inbox and audited status updates under `/api/staff/enquiries`. It is disabled until trusted staff credentials are configured. Readers cannot update status; caseworkers can move received → contacted/closed and contacted → closed. Every operation is scoped to the authenticated institution and requires explicit, institution-bound sharing consent. Historical/unconsented records stay private.
 
-The API excludes NIC, age, sex and street address. Status updates use an expected-state check and atomic audit writes to prevent lost updates. Submission retries retain the original `received` receipt after staff workflow changes. No notifications are sent and no customer/staff UI login is added. See [staff activation and API contract](docs/STAFF_ACCESS.md). Local tests use synthetic credentials; do not supply real tokens in chat or app builds.
+The API excludes NIC, age, sex and street address. Status updates use an expected-state check and atomic audit writes to prevent lost updates. Submission retries retain the original `received` receipt after staff workflow changes. No notifications are sent. A staff browser interface is available at `/staff/`; it uses the existing scoped tokens, without adding customer account login. See [staff activation and API contract](docs/STAFF_ACCESS.md). Local tests use synthetic credentials; do not supply real tokens in chat or app builds.
 
 ## Structure and compatibility
 

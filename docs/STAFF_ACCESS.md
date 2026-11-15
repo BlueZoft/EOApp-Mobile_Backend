@@ -1,6 +1,6 @@
-# Staff enquiry access — 1.2.0
+# Staff enquiry access — 1.3.0
 
-The backend provides an institution-scoped staff inbox API and manual workflow status updates. There is no staff web/mobile interface, customer status lookup, email/SMS delivery or automatic bank handoff.
+The backend provides an institution-scoped staff inbox API and manual workflow status updates. A same-origin staff browser interface is available at `/staff/`. There is no staff interface in the customer Flutter app, customer status lookup, email/SMS delivery or automatic bank handoff.
 
 ## Activation and credential ownership
 
@@ -33,12 +33,23 @@ The customer form shows an optional, initially unchecked consent checkbox only w
 
 Public `POST /api/userdata` accepts optional boolean `sharingConsent` and, when true, required `consentInstitutionId`. The server checks it against the selected active institution and records the version/date itself. Client-provided dates/versions do not override these. Successful submission/replay always returns the original `{enquiryId, status: "received"}` receipt, even after staff change the workflow status. It is not a promise of bank delivery.
 
+## Browser workflow
+
+1. Visit `/staff/` over HTTPS (loopback HTTP is allowed for local development).
+2. Enter the token received securely from your administrator. The field clears immediately; the token stays only in memory. Do not put it in a URL or browser storage.
+3. Filter and page through consented enquiries, open an enquiry, and review contact details/status history. Only caseworkers can mark contacted or close an enquiry.
+4. If another request changes the status, the interface loads the latest detail before allowing another update. Authentication/access failure clears visible records and returns to sign-in.
+5. Sign out when finished. Reload/navigation and 15 minutes without pointer/key activity also end the session. Late network responses cannot repopulate signed-out data.
+
+Times are displayed in Asia/Colombo. Status updates do not send notifications. The HTML shell contains no personal records; data comes only from authenticated APIs. Restrictive CSP, no-store responses and text-only rendering protect the interface, while API authorization remains the access boundary.
+
 ## Endpoints
 
 Send `Authorization: Bearer <raw staff token>` through a trusted staff client. Responses use `Cache-Control: no-store`. NIC, age, sex, street address and retry fingerprints are never returned. Only the consented contact details, enquiry, selected labels, workflow metadata and (in detail responses) status history are exposed.
 
 | Endpoint | Behavior |
 | --- | --- |
+| `GET /api/staff/session` | Current staff ID, institution/name and role; no credential/hash fields |
 | `GET /api/staff/enquiries` | Newest-first inbox for the credential's institution |
 | `GET /api/staff/enquiries/:id` | Scoped detail and audit history; missing/out-of-scope/private records return 404 |
 | `PATCH /api/staff/enquiries/:id/status` | Caseworkers only; requires `status` and `expectedStatus` |
@@ -63,4 +74,4 @@ Invalid/missing credentials return 401, insufficient role or inactive institutio
 
 ## Remaining deployment work
 
-Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO, staff UI, consent withdrawal/customer verification, retention procedures and notification delivery remain separate work. A receipt/reference number is not authorization to view or modify personal data.
+Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO and production credential provisioning, consent withdrawal/customer verification, retention procedures and notification delivery remain separate work. A receipt/reference number is not authorization to view or modify personal data.

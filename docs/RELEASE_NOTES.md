@@ -1,3 +1,14 @@
+# Version 1.1.0 — sound null safety — 2026-11-15
+
+- Migrated the app and test suite to sound null safety. Catalogue IDs/display fields and screen arguments are required; only genuinely optional metadata, cache timestamps and pending state remain nullable.
+- Validators handle nullable form callbacks explicitly. Enquiry submission returns a non-null reference after response validation.
+- Removed the unsound build flag from development and CI commands. Frontend version is 1.1.0+2; backend version is 1.1.0.
+- Final validation: Flutter analysis clean, **10 Flutter tests passed**, **7 backend tests passed**, and a debug APK compiled with sound null safety. These are local results; hosted CI, device flows and release signing remain unverified.
+
+The remaining platform upgrade is current Flutter/Dart 3 and Play Store target compatibility. Provider ownership/terms and staff authorization/delivery still need implementation/verification; historical data is not promoted to verified status.
+
+---
+
 # Reproducible build milestone — 2026-11-15
 
 - Completed code from the reliability/catalogue milestones is pushed directly to `main` in both repositories, as requested. Earlier feature branches are retained.

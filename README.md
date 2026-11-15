@@ -1,4 +1,4 @@
-# Hetarata mobile backend — catalogue and reliability update
+# Hetarata mobile backend — 1.1.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 

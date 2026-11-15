@@ -28,9 +28,15 @@
 - [x] Verify Flutter analysis, 10 tests, backend tests, fresh tool extraction and repeated debug compilation.
 - [x] Add CI workflow definitions; hosted execution results remain unverified.
 
+## Null-safety milestone status
+- [x] Migrate domain models, widgets, API clients and tests to sound null safety.
+- [x] Require catalogue/display inputs and handle optional metadata/form callbacks explicitly.
+- [x] Pass analysis and all Flutter tests; compile debug APK without the unsound flag.
+- [x] Update version numbers, documentation and CI build command.
+
 ## Follow-up refactoring
 - Institution ownership data, staff authorization and enquiry delivery.
 - Verified catalogue curation, localization and smaller reusable Flutter widgets.
-- Flutter null safety and Android toolchain migration, followed by device/release checks.
+- Current Flutter/Dart 3 and Play Store target upgrade, followed by device/release checks.
 
 These follow-ups require product/data migration decisions and are not silently treated as complete by this reliability release. Saved enquiries are not yet delivered to institutions.

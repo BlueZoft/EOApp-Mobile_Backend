@@ -23,6 +23,24 @@ const schema = new mongoose.Schema({
   withdrawalTokenHash: { type: String, select: false },
   consentWithdrawnAt: Date,
   statusChangedAt: Date,
+  purgedAt: Date,
+  retentionPolicyDays: Number,
+  retentionHold: { type: Boolean, default: false },
+  supportWithdrawal: { type: new mongoose.Schema({
+    caseHash: String,
+    reviewerIds: [String],
+    at: Date
+  }, { _id: false }), select: false },
+  notification: { type: new mongoose.Schema({
+    state: { type: String, enum: ['pending', 'processing', 'delivered', 'cancelled', 'failed'] },
+    attempts: { type: Number, default: 0 },
+    nextAttemptAt: Date,
+    leaseToken: String,
+    leaseUntil: Date,
+    deliveredAt: Date,
+    deliveryId: String,
+    lastCode: String
+  }, { _id: false }), select: false },
   statusHistory: { type: [new mongoose.Schema({
     fromStatus: { type: String, enum: ['received', 'contacted', 'closed'], required: true },
     toStatus: { type: String, enum: ['received', 'contacted', 'closed'], required: true },
@@ -35,6 +53,7 @@ const schema = new mongoose.Schema({
 schema.index({ idempotencyKey: 1 }, { unique: true, sparse: true })
 schema.index({ withdrawalTokenHash: 1 }, { unique: true, sparse: true })
 schema.index({ consentWithdrawnAt: 1 })
+schema.index({ 'notification.state': 1, 'notification.nextAttemptAt': 1, 'notification.leaseUntil': 1 })
 schema.index({ institutionId: 1, _id: -1 })
 schema.index({ institutionId: 1, status: 1, _id: -1 })
 module.exports = mongoose.model('Enquiry', schema)

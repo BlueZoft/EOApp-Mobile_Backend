@@ -41,7 +41,8 @@ const createEnquiry = asyncHandler(async (req, res) => {
         ...(data.withdrawalTokenHash ? { withdrawalTokenHash: data.withdrawalTokenHash } : {}),
         sharingConsent: data.sharingConsent === true,
         ...(data.sharingConsent === true ? {
-          consentInstitutionId: institutionId, consentVersion: 'institution-contact-v1', consentedAt: new Date()
+          consentInstitutionId: institutionId, consentVersion: 'institution-contact-v1', consentedAt: new Date(),
+          notification: { state: 'pending', attempts: 0, nextAttemptAt: new Date() }
         } : {}),
         ...(key ? { idempotencyKey: key, requestHash: hash } : {})
       })
@@ -53,6 +54,7 @@ const createEnquiry = asyncHandler(async (req, res) => {
     }
   }
   if (key && enquiry.requestHash !== hash) return res.status(409).json({ message: 'Idempotency key already used for different enquiry data' })
+  if (enquiry.purgedAt) return res.status(410).json({ message: 'This enquiry has expired; a new enquiry requires a new private receipt and consent' })
   // This is the immutable submission receipt, not the current staff workflow status.
   return res.status(created ? 201 : 200).json({ enquiryId: enquiry.id, status: 'received' })
 })

@@ -94,6 +94,10 @@ async function startDemo({ mongoUri = 'mongodb://127.0.0.1:27018', port = 5100, 
       receipts.push({ fixtureId: row.id, ...receipt, withdrawalToken: proof, idempotencyKey: key })
     }
     await fs.writeFile(path.join(directory, 'session.json'), JSON.stringify({ synthetic: true, base, dbName, receipts }, null, 2) + '\n', { flag: 'wx', mode: 0o600 })
+    await fs.writeFile(path.join(directory, 'support-request.json'), JSON.stringify({ payload: {
+      schemaVersion: 1, action: 'withdraw-sharing', database: dbName, enquiryId: receipts[0].enquiryId,
+      caseReference: 'DEMO-SUPPORT-001', verifiedAt: new Date().toISOString()
+    }, approvals: [] }, null, 2) + '\n', { flag: 'wx', mode: 0o600 })
     return { base, dbName, directory, stop }
   } catch (error) {
     await stop()

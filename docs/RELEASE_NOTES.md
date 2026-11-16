@@ -1,3 +1,21 @@
+# Version 1.6.0 — notification processing, support withdrawal and retention execution — 2026-11-16
+
+- Added an embedded notification outbox atomically with explicitly consented new enquiries. A bounded worker claims leases, retries transient failures with stable event IDs, limits attempts and rechecks consent/active institution/workflow state. Withdrawal cancels work and late acknowledgements cannot restore it. Only a replaceable, private local synthetic adapter is registered; real email/SMS/bank delivery stays disabled.
+- Added `retention:apply`, separate from the read-only report. It requires explicit activation and exact database confirmation, processes at most 1000 candidates, and rechecks current holds/latest terminal dates at the atomic replacement. Ambiguous dates stay for review. An allowlist removes all personal/current/unknown legacy fields while preserving minimal pseudonymous retry/revocation tombstones; no TTL or scheduler is enabled.
+- Purged keyed replays return 410 instead of recreating personal details. Existing proof withdrawal acknowledgements remain valid. Flutter now stops expired retries and offers an explicit new enquiry, with a fresh key/proof and consent reset; old receipts stay available. Customer app is 1.6.0+5.
+- Added a privileged legacy/lost-proof support withdrawal command requiring a current target/database/case approval signed by two distinct allowlisted Ed25519 reviewers with independent keys. External human identity verification remains mandatory; no public lookup/recovery endpoint, proof reissue or production reviewer is created. The update atomically revokes sharing, cancels notification work and stores a hidden minimal audit until retention.
+- Extended the disposable demo with an unsigned replaceable support request; documented signing, local delivery, holds, rollout, tombstone sensitivity and backup/restore boundaries. Maintenance defaults disable automatic collection/index creation. A demo-test isolation assertion now ignores unrelated databases created by concurrently running test suites.
+
+## Executed validation
+
+**40 backend API/integration tests, 9 Chromium browser tests, 25 Flutter tests, clean analysis and a sound-null-safe Android debug APK passed.** A direct CLI demo walkthrough delivered two local messages, cancelled two closed-case queue entries, cleared the one eligible synthetic record, applied a dual-signed support withdrawal, confirmed staff denial and removed the disposable session on shutdown.
+
+Coverage includes concurrent claims, uncertain-send retry deduplication, abandoned leases, exhausted retries, withdrawal/late-acknowledgement races, holds, ambiguous/latest/boundary terminal dates, unknown-field removal, partial batch idempotency, stale-selection rechecks, post-retention replay/proof behavior, signed approval tampering/expiry/database and target restrictions, concurrent/legacy support withdrawal, private signing files and disabled/read-only command defaults. Mobile checks verify no automatic expiry retry, preserved receipts, new proof/key and reset consent.
+
+Only synthetic test/demo databases were modified by execution checks; existing application enquiries and production configuration were preserved. No external recipient was contacted, no real reviewer/private key was provisioned and no live environment configuration was published. Real notification transport/recipient activation, reviewer appointment and external identity procedure, production retention/holds/backup rollout, verified bank data, real-device/iOS checks and current Play Store compatibility remain pending.
+
+---
+
 # Backend 1.5.0 — replaceable synthetic development and credential tooling — 2026-11-16
 
 - Added a fictional two-institution fixture with matching products/branches and six enquiry scenarios: shared, private, withdrawn, another institution, old closed and recent closed. Labels stay SYNTHETIC; contact data is fixed placeholder data and no bank terms are asserted.

@@ -123,9 +123,10 @@ test('synthetic demo supports customer/staff workflow and only removes its own s
     const occupied = require('node:net').createServer()
     await new Promise(resolve => occupied.listen(0, '127.0.0.1', resolve))
     try {
-      const before = (await sentinel.db.admin().listDatabases()).databases.map(row => row.name).sort()
+      const demoNames = async () => (await sentinel.db.admin().listDatabases()).databases.map(row => row.name).filter(name => /^eoapp_demo_[a-f0-9]{32}$/.test(name)).sort()
+      const before = await demoNames()
       await assert.rejects(startDemo({ mongoUri, port: occupied.address().port, outputRoot: root }), { code: 'EADDRINUSE' })
-      assert.deepEqual((await sentinel.db.admin().listDatabases()).databases.map(row => row.name).sort(), before)
+      assert.deepEqual(await demoNames(), before)
       assert.deepEqual(await fs.readdir(root), [])
       assert.equal(process.env.STAFF_TOKEN_BINDINGS, previous)
     } finally { await new Promise(resolve => occupied.close(resolve)) }

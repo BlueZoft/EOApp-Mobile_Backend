@@ -53,7 +53,7 @@
 - [x] Implement the staff browser workspace using the scoped API.
 - [ ] Provision authorized staff identities; no production tokens are configured by this work.
 - [x] Implement device-proof consent withdrawal and dry-run retention planning.
-- [ ] Implement verified legacy/lost-device recovery, retention execution and operational notification delivery.
+- [x] Implement dual-signed support withdrawal, bounded retention/tombstones and queued local notifications (1.6); production activation remains below.
 
 ## Staff browser milestone status
 - [x] Add sign-in, paginated/filterable inbox, detail/audit views and role-aware status actions.
@@ -68,10 +68,10 @@
 - [x] Persist minimal pending receipts before submission in OS-backed storage; expose customer withdrawal and safe retry controls.
 - [x] Keep old/unproven records on a verified-support path; no public identity bypass is added.
 - [x] Use a configurable 180-day operational default after the latest closure/withdrawal event.
-- [x] Provide aggregate dry-run retention reports only; no apply/delete command or scheduler.
+- [x] Provide aggregate read-only retention reports; execution is a separate explicitly enabled command in 1.6, with no scheduler.
 - [x] Validate 22 backend tests, 23 Flutter tests, clean analysis and a secure-storage Android debug build.
 - [ ] Verify real-device secure storage, recovery/support policy and iOS behavior.
-- [ ] Design and review retention execution/tombstones before deleting or anonymizing records.
+- [x] Implement bounded personal-field clearing and minimal retry/withdrawal tombstones; validate only synthetic execution (1.6).
 
 ## Synthetic development milestone — backend 1.5.0 / customer app 1.4.0
 - [x] Reinspect clean main checkouts and preserve the completed staff/privacy/catalogue work.
@@ -82,7 +82,20 @@
 - [x] Pass all 26 backend integration tests, 9 Chromium browser regressions and a direct CLI startup/shutdown smoke check.
 - [x] Document fixture replacement, emulator configuration, reset recovery and credential issuance/rotation in both repositories.
 - [ ] Activate authorized production staff identities and replace fictional data through verified curation (not a demo import).
-- [ ] Implement notification delivery, verified legacy/lost-device support and reviewed application retention execution/tombstones.
+- [x] Follow through with local notification delivery, dual-signed support and retention/tombstone execution (1.6).
+
+## Operations milestone — backend/customer 1.6.0
+- [x] Queue minimal institution notifications atomically with consented submission; add leased retry processing and an idempotent local synthetic transport.
+- [x] Cancel notification work after withdrawal/closure/inactive ownership, and prevent late acknowledgements from restoring access.
+- [x] Add bounded personal-field retention clearing, atomic eligibility/hold rechecks, ambiguous-date exclusions and permanent minimal retry/revocation tombstones.
+- [x] Reject matching purged retries with HTTP 410; retain proof-based withdrawal acknowledgement without repopulating fields.
+- [x] Add privileged legacy/lost-proof support withdrawal requiring two distinct trusted Ed25519 signatures over the verified case/target/database/time.
+- [x] Handle expiry in Flutter with an explicit new enquiry action, new proof/key and unchecked consent; preserve old receipts.
+- [x] Document local adapters, synthetic approval replacement, holds, signing/activation, rollout and backup/restore limitations.
+- [x] Pass 40 backend tests, 9 Chromium browser tests, 25 Flutter tests, clean analysis, debug APK build and an operational CLI demo walkthrough.
+- [ ] Activate a real notification adapter/authorized recipient and schedule supervised workers.
+- [ ] Appoint real support reviewers and approve the external identity-verification procedure.
+- [ ] Approve production retention/hold/tombstone lifetime and backup/restore operations; no existing application data was scrubbed by this release.
 
 ## Follow-up refactoring
 - Verified institution ownership data, operational staff provisioning and enquiry notification delivery.

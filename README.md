@@ -1,4 +1,4 @@
-# Hetarata mobile backend — 1.5.0
+# Hetarata mobile backend — 1.6.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 
@@ -89,7 +89,7 @@ Open `/staff/` on the same origin as the API. Sign in with the access token supp
 
 The browser keeps tokens only in memory, clears the password field after submission, and never stores tokens or enquiry records in browser storage/cookies. Sign-out, reload, 15 minutes of inactivity, credential revocation or access failure ends the session and clears displayed records. Non-local HTTP sign-in is refused; deployed staff access requires HTTPS. Do not embed staff tokens in the customer Flutter app.
 
-Local validation: **26 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
+Local validation: **40 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
 
 ```bash
 scripts/setup-browser.sh
@@ -108,7 +108,13 @@ Version 1.4 adds `POST /api/enquiries/consent/withdraw`, authorized by a private
 
 The customer app stores minimal private receipts in OS-backed secure storage and exposes withdrawal through “My enquiries.” No raw withdrawal token is stored in the server database or returned to staff.
 
-The retention default is 180 days after closure/withdrawal, using the latest valid event date. `MONGO_URI=... npm run retention:report` produces an aggregate dry-run only; there is no delete/apply flag or scheduled cleanup. See [privacy lifecycle and limitations](docs/PRIVACY_LIFECYCLE.md).
+The retention default is 180 days after closure/withdrawal, using the latest valid event date. `MONGO_URI=... npm run retention:report` stays read-only. Version 1.6 adds a separate, explicitly enabled `retention:apply` command that clears eligible personal fields in bounded batches and retains minimal retry/revocation tombstones. Holds and ambiguous dates are excluded. Matching keyed retries after clearing return 410. No cleanup is scheduled or executed against existing application data by this release. See the [execution/backup/tombstone runbook](docs/PRIVACY_LIFECYCLE.md).
+
+Lost-device and legacy withdrawal now has a [privileged support command](docs/SUPPORT_RECOVERY.md), requiring a current case approval signed by two independently configured Ed25519 reviewers. Real-world identity checks remain an external human responsibility; no public lookup/recovery bypass or production reviewers are enabled.
+
+## Durable notification queue
+
+Explicitly consented new enquiries atomically include a pending notification entry. `npm run notifications:run` defaults to disabled mode, with no connection/send. The explicit local transport writes private, minimal synthetic messages only for demo/test databases; applicant data and credentials never enter the message. It supports leases, retries, bounded attempts, stable event IDs and consent rechecks; withdrawal/purge prevents late acknowledgements from restoring access. See [local delivery and adapter replacement](docs/NOTIFICATIONS.md). No SMTP/SMS/webhook destination or real bank delivery is configured, and normal API startup runs no worker.
 
 ## Initial institution source: RDB
 
@@ -138,7 +144,7 @@ No destructive migration is run. The unique sparse index permits legacy document
 
 ## Limitations and next work
 
-`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership and current terms, operational staff provisioning, verified legacy/lost-device recovery, retention execution, rate limiting and notification delivery remain release prerequisites before public deployment. Existing historical catalogue terms have not been verified. No email is sent.
+`received` means saved in this system, **not delivered to a bank or approved**. Verified institution ownership/current terms, authorized staff and support reviewers, reviewed retention/backup rollout, rate limiting and a configured real notification provider remain release prerequisites. Support signatures attest external human verification; the app does not perform identity checks. Existing historical terms have not been verified. No external email/SMS is sent by the local adapter.
 
 See [action plan](docs/ACTION_PLAN.md) and [release notes](docs/RELEASE_NOTES.md). Run the coordinated frontend update so users receive the new reference and failure behavior.
 

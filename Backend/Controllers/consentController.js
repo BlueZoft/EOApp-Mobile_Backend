@@ -10,7 +10,8 @@ const withdrawConsent = asyncHandler(async (req, res) => {
   const at = new Date()
   // One atomic operation disables all future staff access. Keep the first withdrawal date.
   let enquiry = await Enquiry.findOneAndUpdate({ withdrawalTokenHash, consentWithdrawnAt: null }, {
-    $set: { sharingConsent: false, consentWithdrawnAt: at }
+    $set: { sharingConsent: false, consentWithdrawnAt: at, 'notification.state': 'cancelled' },
+    $unset: { 'notification.leaseToken': '', 'notification.leaseUntil': '' }
   }, { new: true }).select('_id consentWithdrawnAt').lean()
   if (!enquiry) enquiry = await Enquiry.findOne({ withdrawalTokenHash }).select('_id consentWithdrawnAt').lean()
   if (!enquiry) return res.status(404).json({ message: 'Withdrawal could not be confirmed; keep the private receipt and retry later' })

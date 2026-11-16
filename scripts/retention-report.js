@@ -1,5 +1,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose')
+mongoose.set('autoCreate', false)
+mongoose.set('autoIndex', false)
 const { retentionPlan } = require('../Backend/Services/retentionPlan')
 ;(async () => {
   const args = process.argv.slice(2)

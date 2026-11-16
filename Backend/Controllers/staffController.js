@@ -6,7 +6,7 @@ const transitions = { received: ['contacted', 'closed'], contacted: ['closed'], 
 const fields = 'Name Telephone email Inquiry Branch askLoan productId branchId status createdAt updatedAt statusChangedAt consentedAt consentVersion'
 const statusOf = enquiry => enquiry.status || 'received'
 const statusFilter = status => status === 'received' ? { $in: ['received', null] } : status
-const institutionScope = req => ({ institutionId: req.staff.institutionId, sharingConsent: true, consentInstitutionId: req.staff.institutionId, consentVersion: 'institution-contact-v1', consentedAt: { $type: 'date' } })
+const institutionScope = req => ({ institutionId: req.staff.institutionId, sharingConsent: true, consentInstitutionId: req.staff.institutionId, consentVersion: 'institution-contact-v1', consentedAt: { $type: 'date' }, purgedAt: { $exists: false } })
 const validId = id => /^[a-fA-F0-9]{24}$/.test(id)
 function view(enquiry, includeHistory = false) {
   return {

@@ -1,4 +1,4 @@
-# Staff enquiry access — 1.3.0
+# Staff enquiry access — 1.6.0
 
 The backend provides an institution-scoped staff inbox API and manual workflow status updates. A same-origin staff browser interface is available at `/staff/`. There is no staff interface in the customer Flutter app, customer status lookup, email/SMS delivery or automatic bank handoff.
 
@@ -88,7 +88,7 @@ Invalid/missing credentials return 401, insufficient role or inactive institutio
 
 ## Remaining deployment work
 
-Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO and production credential provisioning, verified support for legacy/lost-device withdrawal, retention execution and notification delivery remain separate work. A receipt/reference number is not authorization to view or modify personal data.
+Keep the API disabled until staff identities, institution ownership and operational authorization are established. A deployed staff service requires enforced HTTPS, access/abuse controls and a credential issuance/rotation process. Managed identity/SSO and production credential activation remain operational work. Version 1.6 adds a privileged dual-signed support withdrawal path, bounded personal-field retention clearing and a synthetic local notification worker; see SUPPORT_RECOVERY.md, PRIVACY_LIFECYCLE.md and NOTIFICATIONS.md. They require explicit operator configuration, and no production reviewer, retention schedule or real delivery provider is activated by this release. A receipt/reference number is not authorization to view or modify personal data.
 
 ## Customer withdrawal
 

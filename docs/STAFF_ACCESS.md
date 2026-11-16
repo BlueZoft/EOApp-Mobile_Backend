@@ -18,6 +18,20 @@ Roles are `reader` (read only) and `caseworker` (read and status updates). Insti
 
 Local development needs no real credentials: integration tests use transient random tokens and synthetic institutions in isolated test databases. No bank is contacted.
 
+### Issue credential files without activating an account
+
+Version 1.5 adds a local operator utility; it needs no database connection:
+
+```bash
+npm run staff:provision -- --institution=rdb --staff=rdb-agent-1 --role=caseworker --output=/absolute/private/new-directory
+```
+
+The destination must be a **new directory outside source control**, with an existing parent. It is created with owner-only access; `credentials.json` and `bindings.json` use mode 0600. The command generates a fresh 32-byte random token, writes it to the credential file and writes only its SHA-256 hash/identity/role to the bindings file. It never prints the token, overwrites an existing directory or activates access. Protect these local files/backups on your operator workstation and use an approved secure delivery mechanism for the raw token.
+
+Before activation, an operator must verify the institution is active, the staff identity/role is authorized and the delivery channel belongs to that person. Securely merge the new binding into the deployment's `STAFF_TOKEN_BINDINGS` array, preserving other staff bindings; do not blindly replace the whole array. Only the bindings file belongs in backend configuration, never the raw credentials file. Restart the process with the changed configuration. For rotation, issue a new token to a new directory, replace the old hash binding, restart and verify the old token is rejected. Revoke by removing the old binding and restarting. This utility provides credential material, not SSO, identity verification or managed secret distribution.
+
+For an already wired **fictional** local session, use `npm run demo`; see [synthetic development](SYNTHETIC_DEVELOPMENT.md). Production provisioning remains an operator responsibility.
+
 ## Consent and record visibility
 
 Every staff read/update requires all of:

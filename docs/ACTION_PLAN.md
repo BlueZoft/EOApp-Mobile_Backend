@@ -73,6 +73,17 @@
 - [ ] Verify real-device secure storage, recovery/support policy and iOS behavior.
 - [ ] Design and review retention execution/tombstones before deleting or anonymizing records.
 
+## Synthetic development milestone — backend 1.5.0 / customer app 1.4.0
+- [x] Reinspect clean main checkouts and preserve the completed staff/privacy/catalogue work.
+- [x] Provide a replaceable, clearly fictional JSON fixture with two institutions, products/branches and shared/private/withdrawn/old/recent enquiry scenarios.
+- [x] Run the normal APIs in a separate loopback demo process with a random disposable database and temporary institution-scoped credentials.
+- [x] Add local credential issuance tooling with private files, no token logging and no automatic activation.
+- [x] Exercise consent/provider/role isolation, audited updates, withdrawal, retention dry-run, failed-start cleanup and preservation of unrelated database contents.
+- [x] Pass all 26 backend integration tests, 9 Chromium browser regressions and a direct CLI startup/shutdown smoke check.
+- [x] Document fixture replacement, emulator configuration, reset recovery and credential issuance/rotation in both repositories.
+- [ ] Activate authorized production staff identities and replace fictional data through verified curation (not a demo import).
+- [ ] Implement notification delivery, verified legacy/lost-device support and reviewed application retention execution/tombstones.
+
 ## Follow-up refactoring
 - Verified institution ownership data, operational staff provisioning and enquiry notification delivery.
 - Verified catalogue curation, localization and smaller reusable Flutter widgets.

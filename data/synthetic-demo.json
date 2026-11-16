@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "synthetic": true,
+  "institutions": [
+    {"publicId": "demo-enterprise", "name": "SYNTHETIC Enterprise Bank"},
+    {"publicId": "demo-growers", "name": "SYNTHETIC Growers Bank"}
+  ],
+  "branches": [
+    {"publicId": "demo-enterprise-branch", "name": "SYNTHETIC Enterprise Branch", "institutionId": "demo-enterprise"},
+    {"publicId": "demo-growers-branch", "name": "SYNTHETIC Growers Branch", "institutionId": "demo-growers"}
+  ],
+  "products": [
+    {"publicId": "demo-business", "institutionId": "demo-enterprise", "category": "business", "lName": "SYNTHETIC Small Business Scheme", "sDes": "Fictional development fixture; no bank offer.", "forWho": "Synthetic business applicants", "iRate": "Demo only; no quoted rate", "maxLimit": "Demo only; no credit limit", "maxRepay": "Demo only; no repayment terms", "eligibles": "Synthetic applicants only"},
+    {"publicId": "demo-agriculture", "institutionId": "demo-growers", "category": "agriculture", "lName": "SYNTHETIC Growers Scheme", "sDes": "Fictional development fixture; no bank offer.", "forWho": "Synthetic growers", "iRate": "Demo only; no quoted rate", "maxLimit": "Demo only; no credit limit", "maxRepay": "Demo only; no repayment terms", "eligibles": "Synthetic applicants only"}
+  ],
+  "enquiries": [
+    {"id": "demo-shared", "name": "SYNTHETIC Shared Applicant", "productId": "demo-business", "branchId": "demo-enterprise-branch", "sharingConsent": true, "withdraw": false},
+    {"id": "demo-private", "name": "SYNTHETIC Private Applicant", "productId": "demo-business", "branchId": "demo-enterprise-branch", "sharingConsent": false, "withdraw": false},
+    {"id": "demo-withdrawn", "name": "SYNTHETIC Withdrawn Applicant", "productId": "demo-business", "branchId": "demo-enterprise-branch", "sharingConsent": true, "withdraw": true},
+    {"id": "demo-other-institution", "name": "SYNTHETIC Grower Applicant", "productId": "demo-agriculture", "branchId": "demo-growers-branch", "sharingConsent": true, "withdraw": false},
+    {"id": "demo-retention-due", "name": "SYNTHETIC Old Closed Applicant", "productId": "demo-business", "branchId": "demo-enterprise-branch", "sharingConsent": true, "withdraw": false, "closedDaysAgo": 200},
+    {"id": "demo-retention-recent", "name": "SYNTHETIC Recent Closed Applicant", "productId": "demo-business", "branchId": "demo-enterprise-branch", "sharingConsent": true, "withdraw": false, "closedDaysAgo": 2}
+  ]
+}

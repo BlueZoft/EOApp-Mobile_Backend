@@ -1,3 +1,19 @@
+# Backend 1.5.0 — replaceable synthetic development and credential tooling — 2026-11-16
+
+- Added a fictional two-institution fixture with matching products/branches and six enquiry scenarios: shared, private, withdrawn, another institution, old closed and recent closed. Labels stay SYNTHETIC; contact data is fixed placeholder data and no bank terms are asserted.
+- Added `npm run demo`: an independent loopback service using the normal APIs, an isolated random session database and temporary reader/caseworker bindings. It ignores normal database/staff configuration and never modifies existing application data. Graceful shutdown removes only that run's synthetic database and private files; interrupted-session cleanup is documented.
+- Added `npm run staff:provision -- ...`: generates random tokens and hash-only bindings into a new private directory, without logging tokens or activating access. Operator verification, secure delivery, merge/rotation/revocation instructions are documented; production accounts remain unprovisioned.
+- Fixture replacement uses a JSON copy selected by `DEMO_FIXTURE`, with validation of labels, references, ownership and unverified status. Real verified data remains a separate curation/import process. No external notification provider or delivery is configured.
+- Updated READMEs, action plans, provenance and walkthrough documents in both repositories. Customer application remains 1.4.0+4; no Flutter application source or bundled historical data changed.
+
+## Validation
+
+All **26 backend API/integration tests passed**, including credential privacy/exclusivity, invalid/custom fixtures, database-origin restrictions, normal consent/provider/role/update/withdrawal flow, a one-eligible-record retention dry-run, session teardown, occupied-port cleanup and preservation of unrelated database contents. **9 Chromium browser regression tests passed**. A direct demo CLI smoke check also confirmed startup, six seeded scenario receipts, ignored normal database configuration and SIGTERM cleanup. No new Flutter source was changed; the previous 23 passing Flutter tests, clean analysis and debug APK build remain the last mobile validation, not a newly executed device check.
+
+Still pending: authorized production activation/managed identity, verified institutional data, external notifications, legacy/lost-device verification, application retention execution/tombstones/backup policy, real-device/iOS checks and current Play Store compatibility. No existing application enquiry was deleted and no bank was contacted. The cloud runtime works, but reusable environment draft persistence remains blocked separately by `draft_not_editable`.
+
+---
+
 # Version 1.4.0 — customer withdrawal and retention planning — 2026-11-15
 
 - Continued from clean main checkouts; existing staff/browser/catalogue/setup work was preserved.

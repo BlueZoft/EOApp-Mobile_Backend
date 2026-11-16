@@ -1,4 +1,4 @@
-# Hetarata mobile backend — 1.4.0
+# Hetarata mobile backend — 1.5.0
 
 Express/MongoDB API for browsing business-development credit schemes and saving enquiries. This update repairs enquiry responses, prevents duplicate writes on retries with an idempotency key, validates inputs, and removes public access to personal enquiry records.
 
@@ -30,6 +30,12 @@ npm test
 ```
 
 Tests require MongoDB at localhost:27017, or `MONGO_TEST_URI`. Each run creates and drops its own uniquely named `eoapp_test_*` database; it does not use the application database. The test database user needs create/index/drop privileges.
+
+## Replaceable synthetic development data
+
+Run `npm run demo` after the local MongoDB setup above to start a separate demo API on loopback port 5100. It generates its own disposable database, fictional catalogue/applicants and temporary institution-scoped reader/caseworker credentials. `data/synthetic-demo.json` is the replaceable source; use `DEMO_FIXTURE` to select a copy. Existing application data and the historical/RDB source records are preserved. On normal shutdown only the current demo session's database and private credential files are removed.
+
+The demo covers shared/private/withdrawn enquiries, provider isolation, caseworker/reader roles and old/recent closed records for the retention dry-run. No bank is contacted. See [walkthrough and replacement instructions](docs/SYNTHETIC_DEVELOPMENT.md), including Flutter emulator configuration and reset recovery. `npm run staff:provision -- ...` separately generates private credential/binding files without activating staff access; see [operator instructions](docs/STAFF_ACCESS.md).
 
 ## API contract
 
@@ -63,7 +69,7 @@ Send a random `Idempotency-Key` header (16–128 letters, digits, `_` or `-`). R
 
 Changed payload with an already-used key returns **409**. Missing keys are accepted for legacy clients but offer no retry deduplication. Keys must be unpredictable, must not encode personal information, and are not authorization credentials.
 
-Invalid input returns **400**, oversized JSON **413**, and unexpected errors **500** with a generic message. Validation responses include an `errors` object keyed by field. No personal record or stack trace is returned on success/error. `GET /api/userdata` returns **404**: staff access is not implemented.
+Invalid input returns **400**, oversized JSON **413**, and unexpected errors **500** with a generic message. Validation responses include an `errors` object keyed by field. No personal record or stack trace is returned on success/error. `GET /api/userdata` returns **404**; authorized staff use the separate scoped API described below.
 
 New clients send catalogue IDs alongside the existing labels. Unknown/inactive IDs and known institution mismatches return **400**. The server stores canonical product/branch label snapshots and the resolved institution ID; old clients without IDs remain compatible. A matching idempotent replay is honored even if the product is later deactivated. Unassigned historical ownership remains unset; no institution delivery is inferred.
 
@@ -83,7 +89,7 @@ Open `/staff/` on the same origin as the API. Sign in with the access token supp
 
 The browser keeps tokens only in memory, clears the password field after submission, and never stores tokens or enquiry records in browser storage/cookies. Sign-out, reload, 15 minutes of inactivity, credential revocation or access failure ends the session and clears displayed records. Non-local HTTP sign-in is refused; deployed staff access requires HTTPS. Do not embed staff tokens in the customer Flutter app.
 
-Local validation: **22 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
+Local validation: **26 API/integration tests and 9 Chromium browser tests passed**. Browser checks use isolated synthetic institutions/tokens and test databases:
 
 ```bash
 scripts/setup-browser.sh

@@ -1,6 +1,6 @@
 {
   "name": "hetarataapi",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "description": "Backend API for Hetarata App",
   "main": "Backend/Server.js",
   "scripts": {
@@ -10,7 +10,9 @@
     "seed:catalogue": "node scripts/seed-catalogue.js",
     "seed:institutions": "node scripts/seed-institutions.js",
     "test:browser": "scripts/test-browser.sh",
-    "retention:report": "node scripts/retention-report.js"
+    "retention:report": "node scripts/retention-report.js",
+    "demo": "node scripts/start-demo.js",
+    "staff:provision": "node scripts/provision-staff.js"
   },
   "author": "Akila Ariyathilaka",
   "license": "MIT",
